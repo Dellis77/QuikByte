@@ -1,0 +1,5 @@
+1/26/2017
+
+This build send an emil of a created "list" the old "posts" 10 hours after creation to serve and a "reminder" to the user of the "shopping list".
+
+also now the "lists" section includes some cool css.

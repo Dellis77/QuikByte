@@ -1,12 +1,33 @@
+<!Doctype HTML>
+<HTML>
+<header>
+  
+<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+</header>
+
+<body>
+
+<div class="postblock">
+<div class="post-container">
 
 
-<h1>Welcome!</h1>
 <% if user_signed_in? %>
 
-<% end %>
+<h2> YOUR LISTS </h2>
 
+<%if @posts.present? %>
 <% @posts.each do |post| %>
 	<h3><u><%= post.title %></u></h3>
 	<div><%= truncate(post.body, :lenght => 25) %></div>
-	<button class="button"><%= link_to "Read Post", post %></button>
+	<br>
+	<button class="button"><%= link_to "Read List", post %></button>
+	<hr>
+	<br>
 	<% end %>
+	<% end %>
+<% end %>
+
+</div>
+</body>
+</HTML>

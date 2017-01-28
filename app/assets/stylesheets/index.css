@@ -1,0 +1,20 @@
+/* css for post views */
+
+.post-container h2 {
+	background-image: url("h1/h1bg.png")
+
+}
+
+.postblock {
+  width: 400px;
+  margin: 16px auto;
+  font-size: 16px;
+  
+}
+
+.post-container {
+  background: #e3e1df;
+  padding: 12px;
+  box-shadow: 2px 2px 5px #888888;
+
+}

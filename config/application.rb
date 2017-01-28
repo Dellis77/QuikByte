@@ -16,7 +16,7 @@ module QbDev
 
   	:address	=> 'smtp.gmail.com',
   	:domain		=> 'mail.google.com',
-  	:prot 		=> 587,
+  	:port 		=> 587,
   	:user_name 	=> "quikbyteapp@gmail.com", #ENV['GMAIL_USERNAME'],
   	:password	=> "smartfood", #ENV ['GMAIL_PASSWORD'],
     :authentication => 'login',

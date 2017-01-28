@@ -13,3 +13,220 @@
  *= require_tree .
  *= require_self
  */
+
+
+html, body {
+    background: #f9f9f9 none repeat scroll 0 0;
+    color: #000;
+    font: 100%/1.4 tahoma,sans-serif;
+}
+
+body {
+    margin: 0;
+    font-size: 0.8em;
+}
+.con1 h1{
+    text-align: center;
+   position: absolute;
+   text-align: center;
+   width: 100%;
+    top: 25%;
+ 
+    color: white;
+    z-index: 1;
+    font-size: 300%;
+    text-shadow: 50%;
+}
+
+head {
+	margin: 0;
+}
+
+.containers {
+    position: fixed;
+}
+.center {
+    bottom: 0;
+    left: 0;
+    margin: 25% auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.mainMenu {
+    background-color: #ddd;
+    border: 2px solid #888;
+    border-radius: 0.2em;
+    color: #555;
+    height: 500px;
+    list-style-type: none;
+    overflow-y: auto;
+    padding: 0.5em;
+    width: 71%;
+}
+
+.logo {
+    background-color: #fff;
+    background-image: url("logos/QuikByte Logo.png");
+    background-position: absolute;
+    background-repeat: no-repeat;
+    background-size: 17% auto;
+    height: 85px;
+    
+    opacity: 0.60;
+    position: absolute;
+    
+    width: 100%;
+}
+.topmenu {
+    bottom: -7%;
+    left: 10%;
+    list-style: outside none none;
+    position: center;
+    text-align: center;
+}
+.menuitem {
+    border-right: 3px solid;
+    display: inline-block;
+    font-size: 20px;
+    padding: 3px 10px;
+    text-transform: uppercase;
+
+}
+.social {
+    list-style: outside none none;
+    position: absolute;
+    top:30px;
+    right: 0;
+}
+.socialitem {
+    border: 1px solid;
+    border-radius: 4em;
+    display: inline-block;
+    font-size: 18px;
+    padding: 5px;
+    text-align: center;
+    width: 25px;
+}
+.menuitem a, .socialitem a {
+    color: #333;
+    font-weight: bold;
+    text-decoration: none;
+}
+.banner {
+    background-image: url("banner/BAN2.png");
+    position: relative;
+    background-repeat: no-repeat;
+    height: 55%;
+    
+    
+    margin-top:0;
+    
+    width: 100%;
+}
+
+
+/* unvisited link */
+.menuitem a:link {
+    color: #5a5b5a;
+}
+
+/* mouse over link */
+.menuitem a:hover {
+	text-decoration: none;
+        border-bottom: 3px solid;
+        border-bottom-color: #5a5b5a;
+    color: #63a163;
+}
+
+.menuitem .current {
+    color: white;}
+
+.wut h3 {
+	position: bottom;
+ 
+   text-align: center;
+
+}
+
+
+.wrapper {
+	height: 550px;
+}
+
+
+.dapost {
+	position: bottom;
+	
+	text-align: center;
+}
+
+.who button{
+	list-style: outside none none;
+    position: absolute;
+    top:0%;
+    right: 0;
+    background-color: #f2f2f2; 
+    font-size: 16px;
+    padding: 10px 25px;
+opacity: 0.70;
+}
+    
+.wrapper1
+ {
+ 	height: 460px;
+}
+
+.who button{
+    list-style: outside none none;
+    position: absolute;
+    top:0%;
+    right: 0;
+    background-color: #f2f2f2; 
+    border: none;
+    font-size: 16px;
+    padding: 10px 25px;
+opacity: 0.70;
+}
+
+a:link { 
+	text-decoration: none;
+  color: #5a5b5a;
+}
+a:visited { 
+  color: #5a5b5a;
+}
+a:hover { 
+  color: #63a163;
+}
+a:active { 
+  color: #333333;
+}
+
+.who button {
+	-moz-box-shadow: 0px 10px 14px -7px #3b3b3b;
+	-webkit-box-shadow: 0px 10px 14px -7px #3b3b3b;
+	box-shadow: 0px 10px 14px -7px #3b3b3b;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffffff), color-stop(1, #bababa));
+	background:-moz-linear-gradient(top, #ffffff 5%, #bababa 100%);
+	background:-webkit-linear-gradient(top, #ffffff 5%, #bababa 100%);
+	background:-o-linear-gradient(top, #ffffff 5%, #bababa 100%);
+	background:-ms-linear-gradient(top, #ffffff 5%, #bababa 100%);
+	background:linear-gradient(to bottom, #ffffff 5%, #bababa 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#bababa',GradientType=0);
+	background-color:#ffffff;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	border-radius:4px;
+	border:1px solid #4b8f29;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+
+	font-size:13px;
+	font-weight:bold;
+	padding:6px 12px;
+	text-decoration:none;
+	text-shadow:0px -50px 0px #737373;
+}
+
