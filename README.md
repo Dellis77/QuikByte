@@ -1,3 +1,6 @@
+# QuikByte Capstone Project
+# Darren Ellis, Luis Menchaca, Fars Alsairani
+
 # README
 
 This README would normally document whatever steps are necessary to get the
