@@ -1,6 +1,6 @@
 # README
 
-QuiByte Readme File
+QuikByte Readme File
 
 Darren Ellis, Luis Menchaca & Fars Alsairani
 
