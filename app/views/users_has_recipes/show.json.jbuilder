@@ -1,0 +1,1 @@
+json.partial! "users_has_recipes/users_has_recipe", users_has_recipe: @users_has_recipe

@@ -1,0 +1,2 @@
+module RecipesHasIngredientsHelper
+end

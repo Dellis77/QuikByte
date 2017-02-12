@@ -1,0 +1,95 @@
+<!DOCTYPE html> 
+<html>
+
+<head>
+
+<title>QuikByte</title>
+<%= csrf_meta_tags %>
+
+<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <!--  <%= javascript_include_tag :defaults %> -->
+
+</head>
+
+<body>
+<div class="con1">
+   <h1>FIX YOURSELF A BYTE TO EAT</h1>
+   </div>
+
+<div class="banner">
+
+<div class="container" >
+<header>
+<div class="wrapper">
+
+<!--  <%= image_tag("logos/QuikByte Logo.png", width: '250px') %>
+ </div> -->
+
+<div class="logo">
+<ul class="social">
+        <li class="socialitem"><a target="_blank" href="https://www.facebook.com/theworldtocome/">f</a></li>
+        <li class="socialitem"><a target="_blank" href="https://twitter.com/TWTCmusic">t</a></li>
+        <li class="socialitem"><a target="_blank" href="mailto:quikbyteapp@gmail.com">g+</a></li>
+        <li class="socialitem"><a target="_blank" href="https://www.instagram.com/twtcband/">in</a></li>
+        <li class="socialitem"><a target="_blank" href="#">p</a></li>
+</ul>
+<ul class="topmenu">
+
+
+  <li class="menuitem"><%= link_to "Home", root_path %>
+  </li>
+<li class="menuitem"><%= link_to "About", root_path %>
+  </li>
+
+ 
+<% if user_signed_in? %>
+
+  <li class="menuitem"><%= link_to "New Post", new_post_path %>
+  </li>
+
+<li class="menuitem"><%= link_to "Edit User", edit_user_registration_path %>
+  </li>
+
+</ul>
+
+
+
+
+  </div>
+
+
+  </div>
+</header>
+
+<div class="who">
+  <button><%= link_to "Logout", destroy_user_session_path, :method => :delete %>
+</button>
+</div>
+
+</div>
+
+<div class="wut">
+<h3>Hello, <%= current_user.fname %>! You're our favorite customer! </h3>
+</div>
+
+    </div> <!-- banner div -->
+
+
+  </body>
+<div class="dapost">
+     <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+<%= yield %>
+</div>
+<% end %>
+
+<% if !user_signed_in? %>
+ <div class="wrapper1">
+ </div>
+ <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+<%= yield %>
+<% end %>
+</html>

@@ -1,0 +1,2 @@
+module UsersHasIngredientsHelper
+end
