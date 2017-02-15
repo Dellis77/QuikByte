@@ -1,20 +1,19 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Users Has Recipes</h1>
-
-<table>
+<table align ="center">
   <thead>
     <tr>
-      <th>My Recipes</th>
+      <h1>My Recipes</h1>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @users_has_recipes.each do |users_has_recipe| %>
+    <% @favrecipe.each do |users_has_recipe| %>
       <tr>
-        <td><%= users_has_recipe.users %></td>
+
         <td><%= users_has_recipe.recipe_id %></td>
+    
         
      <%#   <td><%= link_to 'Show', users_has_recipe %></td>
      <%#   <td><%= link_to 'Edit', edit_users_has_recipe_path(users_has_recipe) %></td>
@@ -27,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Users Has Recipe', new_users_has_recipe_path %>
+<%#= link_to 'New Users Has Recipe', new_users_has_recipe_path %>

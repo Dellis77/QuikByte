@@ -1,11 +1,11 @@
 class UsersHasRecipesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_users_has_recipe, only: [:show, :edit, :update, :destroy]
+  before_action :find_users_has_recipe, only: [:show, :edit, :update, :destroy]
 
   # GET /users_has_recipes
   # GET /users_has_recipes.json
   def index
-    @users_has_recipes = UsersHasRecipe.all
+    @favrecipe = UsersHasRecipe.where(:user_id => current_user.id) 
   end
 
   # GET /users_has_recipes/1

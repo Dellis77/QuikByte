@@ -5,7 +5,7 @@ class UsersHasIngredientsController < ApplicationController
   # GET /users_has_ingredients
   # GET /users_has_ingredients.json
   def index
-    @users_has_ingredients = UsersHasIngredient.where(:user_id => current_user.id)
+    @users_has_ingredients = UsersHasIngredient.where(:user_id => current_user.id).includes(:ingredients).all
   end
 
   # GET /users_has_ingredients/1
