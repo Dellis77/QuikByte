@@ -17,7 +17,7 @@ class IngredientsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create ingredient" do
     assert_difference('Ingredient.count') do
-      post ingredients_url, params: { ingredient: { IngredientDescription: @ingredient.IngredientDescription, IngredientImage: @ingredient.IngredientImage, IngredientName: @ingredient.IngredientName } }
+      post ingredients_url, params: { ingredient: { description: @ingredient.description, image: @ingredient.image, name: @ingredient.name } }
     end
 
     assert_redirected_to ingredient_url(Ingredient.last)
@@ -34,7 +34,7 @@ class IngredientsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update ingredient" do
-    patch ingredient_url(@ingredient), params: { ingredient: { IngredientDescription: @ingredient.IngredientDescription, IngredientImage: @ingredient.IngredientImage, IngredientName: @ingredient.IngredientName } }
+    patch ingredient_url(@ingredient), params: { ingredient: { description: @ingredient.description, image: @ingredient.image, name: @ingredient.name } }
     assert_redirected_to ingredient_url(@ingredient)
   end
 

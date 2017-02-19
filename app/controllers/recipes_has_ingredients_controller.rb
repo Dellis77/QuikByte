@@ -4,7 +4,7 @@ class RecipesHasIngredientsController < ApplicationController
   # GET /recipes_has_ingredients
   # GET /recipes_has_ingredients.json
   def index
-    @recipes_has_ingredients = RecipesHasIngredient.all
+    @recipes_has_ingredients = RecipesHasIngredient.joins(:recipe, :ingredient).where(:recipe_id => '2')
   end
 
   # GET /recipes_has_ingredients/1
@@ -69,6 +69,6 @@ class RecipesHasIngredientsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def recipes_has_ingredient_params
-      params.require(:recipes_has_ingredient).permit(:recipes_RecipeID, :ingredients_id, :quantity)
+      params.require(:recipes_has_ingredient).permit(:recipe_id, :ingredient_id)
     end
 end

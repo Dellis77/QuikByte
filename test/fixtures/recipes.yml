@@ -1,19 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  RecipeName: MyString
-  RecipeDescription: MyString
-  RecipeImage: MyString
-  VideoURL: MyString
-  Instructions: MyString
-  PrepTime: MyString
-  CookTime: MyString
+  name: MyString
+  description: MyString
+  image: MyString
+  videourl: MyString
+  instructions: MyString
+  preptime: MyString
+  cooktime: MyString
 
 two:
-  RecipeName: MyString
-  RecipeDescription: MyString
-  RecipeImage: MyString
-  VideoURL: MyString
-  Instructions: MyString
-  PrepTime: MyString
-  CookTime: MyString
+  name: MyString
+  description: MyString
+  image: MyString
+  videourl: MyString
+  instructions: MyString
+  preptime: MyString
+  cooktime: MyString

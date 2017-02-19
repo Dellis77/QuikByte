@@ -1,11 +1,10 @@
 class UsersHasIngredientsController < ApplicationController
-  before_action :authenticate_user!
-  before_action :find_users_has_ingredient, only: [:show, :edit, :update, :destroy]
+  before_action :set_users_has_ingredient, only: [:show, :edit, :update, :destroy]
 
   # GET /users_has_ingredients
   # GET /users_has_ingredients.json
   def index
-    @users_has_ingredients = UsersHasIngredient.where(:user_id => current_user.id).includes(:ingredients).all
+    @users_has_ingredients = UsersHasIngredient.all
   end
 
   # GET /users_has_ingredients/1
@@ -16,7 +15,6 @@ class UsersHasIngredientsController < ApplicationController
   # GET /users_has_ingredients/new
   def new
     @users_has_ingredient = UsersHasIngredient.new
-    @users_has_ingredient.user_id = current_user.id
   end
 
   # GET /users_has_ingredients/1/edit
@@ -27,7 +25,6 @@ class UsersHasIngredientsController < ApplicationController
   # POST /users_has_ingredients.json
   def create
     @users_has_ingredient = UsersHasIngredient.new(users_has_ingredient_params)
-    @users_has_ingredient.user_id = current_user.id 
 
     respond_to do |format|
       if @users_has_ingredient.save
@@ -72,6 +69,6 @@ class UsersHasIngredientsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def users_has_ingredient_params
-      params.require(:users_has_ingredient).permit(:users_id, :ingredients_id)
+      params.require(:users_has_ingredient).permit(:user_id, :ingredient_id)
     end
 end

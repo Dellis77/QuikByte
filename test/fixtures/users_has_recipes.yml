@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  users: one
-  recipes_RecipeID: 1
+  user: one
+  recipe: one
 
 two:
-  users: two
-  recipes_RecipeID: 1
+  user: two
+  recipe: two

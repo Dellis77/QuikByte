@@ -1,11 +1,10 @@
 class UsersHasRecipesController < ApplicationController
-  before_action :authenticate_user!
-  before_action :find_users_has_recipe, only: [:show, :edit, :update, :destroy]
+  before_action :set_users_has_recipe, only: [:show, :edit, :update, :destroy]
 
   # GET /users_has_recipes
   # GET /users_has_recipes.json
   def index
-    @favrecipe = UsersHasRecipe.where(:user_id => current_user.id) 
+    @users_has_recipes = UsersHasRecipe.joins(:recipe, :user).where(:user_id => current_user.id).order("name")
   end
 
   # GET /users_has_recipes/1
@@ -16,7 +15,6 @@ class UsersHasRecipesController < ApplicationController
   # GET /users_has_recipes/new
   def new
     @users_has_recipe = UsersHasRecipe.new
-    @users_has_recipe.user_id = current_user.id
   end
 
   # GET /users_has_recipes/1/edit
@@ -71,6 +69,6 @@ class UsersHasRecipesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def users_has_recipe_params
-      params.require(:users_has_recipe).permit(:users_id, :recipes_RecipeID)
+      params.require(:users_has_recipe).permit(:user_id, :recipe_id)
     end
 end

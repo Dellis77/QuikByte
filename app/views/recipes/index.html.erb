@@ -5,9 +5,9 @@
 <table>
   <thead>
     <tr>
-      <th>Recipename</th>
-      <th>Recipedescription</th>
-      <th>Recipeimage</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Image</th>
       <th>Videourl</th>
       <th>Instructions</th>
       <th>Preptime</th>
@@ -19,13 +19,13 @@
   <tbody>
     <% @recipes.each do |recipe| %>
       <tr>
-        <td><%= recipe.RecipeName %></td>
-        <td><%= recipe.RecipeDescription %></td>
-        <td><%= recipe.RecipeImage %></td>
-        <td><%= recipe.VideoURL %></td>
-        <td><%= recipe.Instructions %></td>
-        <td><%= recipe.PrepTime %></td>
-        <td><%= recipe.CookTime %></td>
+        <td><%= recipe.name %></td>
+        <td><%= recipe.description %></td>
+        <td><%= recipe.image %></td>
+        <td><%= recipe.videourl %></td>
+        <td><%= recipe.instructions %></td>
+        <td><%= recipe.preptime %></td>
+        <td><%= recipe.cooktime %></td>
         <td><%= link_to 'Show', recipe %></td>
         <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
         <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>

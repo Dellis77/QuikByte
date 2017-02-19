@@ -1,11 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  recipes_RecipeID: 1
-  ingredients: one
-  quantity: MyString
+  recipe: one
+  ingredient: one
 
 two:
-  recipes_RecipeID: 1
-  ingredients: two
-  quantity: MyString
+  recipe: two
+  ingredient: two
