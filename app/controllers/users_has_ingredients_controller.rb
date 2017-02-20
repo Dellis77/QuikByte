@@ -1,10 +1,10 @@
 class UsersHasIngredientsController < ApplicationController
   before_action :set_users_has_ingredient, only: [:show, :edit, :update, :destroy]
-
+  autocomplete :ingredient, :name
   # GET /users_has_ingredients
   # GET /users_has_ingredients.json
   def index
-    @users_has_ingredients = UsersHasIngredient.all
+    @users_has_ingredients = UsersHasIngredient.joins(:ingredient).where(:user_id => current_user.id).order("name ASC")
   end
 
   # GET /users_has_ingredients/1

@@ -1,21 +1,17 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Users Has Ingredients</h1>
-
+<h1><%= current_user.fname %>'s Ingredients</h1>
+<div align="center">
 <table>
   <thead>
     <tr>
-      <th>User</th>
-      <th>Ingredient</th>
+      <%#<th>Ingredient</th>#%>
       <th colspan="3"></th>
     </tr>
   </thead>
-
   <tbody>
+  </div>
     <% @users_has_ingredients.each do |users_has_ingredient| %>
       <tr>
-        <td><%= users_has_ingredient.user %></td>
-        <td><%= users_has_ingredient.ingredient %></td>
+        <td><%= users_has_ingredient.ingredient.name %></td>
         <td><%= link_to 'Show', users_has_ingredient %></td>
         <td><%= link_to 'Edit', edit_users_has_ingredient_path(users_has_ingredient) %></td>
         <td><%= link_to 'Destroy', users_has_ingredient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -26,4 +22,4 @@
 
 <br>
 
-<%= link_to 'New Users Has Ingredient', new_users_has_ingredient_path %>
+<%= link_to 'Add a New Ingredient', new_users_has_ingredient_path %>

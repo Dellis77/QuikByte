@@ -1,16 +1,14 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Users Has Recipes</h1>
+<h1><%= current_user.fname %>'s Favorite Recipes</h1>
+<div align="center">
 <table>
   <thead>
     <tr>
-      <th>User</th>
-      <th>Recipe</th>
+      
+      <th>Recipe Name</th>
       <th colspan="3"></th>
     </tr>
   </thead>
-
-  <tbody>
+<tbody>
     <% @users_has_recipes.each do |users_has_recipe| %>
       <tr>
         <td><%= users_has_recipe.recipe.name %></td>
@@ -21,7 +19,7 @@
     <% end %>
   </tbody>
 </table>
-
+</div>
 <br>
 
 <%= link_to 'New Users Has Recipe', new_users_has_recipe_path %>
