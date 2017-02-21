@@ -17,6 +17,7 @@ class UsersHasIngredientsController < ApplicationController
     @users_has_ingredient = UsersHasIngredient.new
     @users_has_ingredient.user_id = current_user.id 
     
+    
   end
 
   # GET /users_has_ingredients/1/edit

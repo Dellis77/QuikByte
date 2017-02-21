@@ -6,6 +6,7 @@ class IngredientsController < ApplicationController
   def index
   @q = Ingredient.ransack(params[:q])
   @ingredient = @q.result(distinct: true)
+
   end
 
   # GET /ingredients/1
