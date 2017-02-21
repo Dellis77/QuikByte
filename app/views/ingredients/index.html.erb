@@ -1,21 +1,47 @@
+<!Doctype HTML>
+<HTML>
+<header>
+
+<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+</header>
+
+<body>
+  <% if user_signed_in? %>
+<div class="search">
+
+
 <h1>Ingredients</h1>
 
+<%= search_form_for @q do |f| %>
+
+  <%= f.label :name_cont, "Search For Ingredients" %>
+  <%= f.search_field :name_cont %>
+<div class="actions"><%= f.submit "Search" %></div>
+<% end %>
+</div>
+<div class="ingblock">
+<div class="ing-container">
 <table>
   <thead>
     <tr>
       <th>Name</th>
       <th>Description</th>
-      <th>Image</th>
+      <th>Add Ingredient</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @ingredients.each do |ingredient| %>
+    <% @ingredient.each do |ingredient| %>
       <tr>
         <td><%= ingredient.name %></td>
         <td><%= ingredient.description %></td>
-        <td><%= ingredient.image %></td>
+        <td> <br/><button class="button">
+	<%= image_tag(ingredient.image, :width => '80', :height =>'80' ) %>
+	<br/>
+	<h3><%= "ADD" %></h3>
+	</button></td>
         <td><%= link_to 'Show', ingredient %></td>
         <td><%= link_to 'Edit', edit_ingredient_path(ingredient) %></td>
         <td><%= link_to 'Destroy', ingredient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -27,3 +53,10 @@
 <br>
 
 <%= link_to 'New Ingredient', new_ingredient_path %>
+
+<% end %>
+</div>
+</div>
+</div>
+</body>
+</HTML>

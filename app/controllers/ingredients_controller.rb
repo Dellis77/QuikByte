@@ -4,7 +4,8 @@ class IngredientsController < ApplicationController
   # GET /ingredients
   # GET /ingredients.json
   def index
-    @ingredients = Ingredient.all
+  @q = Ingredient.ransack(params[:q])
+  @ingredient = @q.result(distinct: true)
   end
 
   # GET /ingredients/1
