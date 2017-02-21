@@ -32,10 +32,10 @@ gem 'rails4-autocomplete'
 
 gem 'jquery-ui-rails'
 
-gem 'autocomplete_rails'
+#gem 'autocomplete_rails'
 
 # jQuery UI dependency.
-gem 'jquery-ui-rails'
+#gem 'jquery-ui-rails'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password

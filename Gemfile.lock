@@ -39,8 +39,6 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     arel (7.1.4)
-    autocomplete_rails (0.2.0)
-      rails (>= 4.0, < 5.1)
     bcrypt (3.1.11)
     bcrypt (3.1.11-x64-mingw32)
     bcrypt-ruby (3.1.1.rc1)
@@ -168,7 +166,6 @@ PLATFORMS
   x64-mingw32
 
 DEPENDENCIES
-  autocomplete_rails
   bcrypt-ruby (= 3.1.1.rc1)
   byebug
   coffee-rails (~> 4.2)
