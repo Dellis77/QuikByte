@@ -46,13 +46,19 @@
  
 <% if user_signed_in? %>
 
-  <li class="menuitem"><%= link_to "New Post", new_post_path %>
+  <li class="menuitem"><%= link_to "New List", new_post_path %>
   </li>
 
-<li class="menuitem"><%= link_to "Edit User", edit_user_registration_path %>
+<!--<li class="menuitem"><%= link_to "Edit User", edit_user_registration_path %>
+  </li>-->
+  
+  <li class="menuitem"><%= link_to "Recipes", recipes_path %>
   </li>
   
   <li class="menuitem"><%= link_to "Ingredients", ingredients_path %>
+  </li>
+  
+  <li class="menuitem"><%= link_to "My Fridge", users_has_ingredients_path %>
   </li>
   
 </ul>

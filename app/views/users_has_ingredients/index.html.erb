@@ -1,5 +1,6 @@
 <h1><%= current_user.fname %>'s Ingredients</h1>
-<div align="center">
+<div class="ingblock">
+<div class="ing-container">
 <table>
   <thead>
     <tr>
@@ -14,12 +15,12 @@
         <td><%= users_has_ingredient.ingredient.name %></td>
         <td><%= link_to 'Show', users_has_ingredient %></td>
         <td><%= link_to 'Edit', edit_users_has_ingredient_path(users_has_ingredient) %></td>
-        <td><%= link_to 'Destroy', users_has_ingredient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', users_has_ingredient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
+</div>
 <br>
 
 <%= link_to 'Add a New Ingredient', new_users_has_ingredient_path %>

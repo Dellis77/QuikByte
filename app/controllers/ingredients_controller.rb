@@ -1,4 +1,5 @@
 class IngredientsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_ingredient, only: [:show, :edit, :update, :destroy]
 
   # GET /ingredients
@@ -6,12 +7,12 @@ class IngredientsController < ApplicationController
   def index
   @q = Ingredient.ransack(params[:q])
   @ingredient = @q.result(distinct: true)
-
   end
-
+  
   # GET /ingredients/1
   # GET /ingredients/1.json
   def show
+    @ingredient = Ingredient.find(params[:id])
   end
 
   # GET /ingredients/new
