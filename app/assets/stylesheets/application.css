@@ -70,8 +70,8 @@ head {
     background-image: url("logos/QuikByte Logo.png");
     background-position: absolute;
     background-repeat: no-repeat;
-    background-size: 17% auto;
-    height: 85px;
+    background-size: 14% auto;
+    height: 86px;
     
     opacity: 0.60;
     position: absolute;
@@ -114,7 +114,7 @@ head {
     text-decoration: none;
 }
 .banner {
-    background-image: url("banner/BANs.png");
+    background-image: url("banner/banS7.png");
     position: relative;
     background-repeat: no-repeat;
     height: 55%;
