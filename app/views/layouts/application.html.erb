@@ -95,10 +95,16 @@
 <% end %>
 
 <% if !user_signed_in? %>
+
  <div class="wrapper1">
  </div>
  <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 <%= yield %>
+
+
+
 <% end %>
+
+
 </html>

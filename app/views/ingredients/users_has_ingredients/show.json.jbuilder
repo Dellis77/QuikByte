@@ -1,1 +1,0 @@
-json.partial! "users_has_ingredients/users_has_ingredient", users_has_ingredient: @users_has_ingredient
