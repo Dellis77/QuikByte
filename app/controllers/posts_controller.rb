@@ -34,7 +34,7 @@ PostMailer.post_created(@user).deliver_later(wait_until: 10.hours.from_now)
   else
     render 'new'
   end
- end
+  end
 
  def show
 

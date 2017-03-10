@@ -5,8 +5,12 @@ Rails.application.routes.draw do
   resources :recipes_has_ingredients
   resources :recipes
   resources :ingredients
+
+  match 'users_has_ingredient', to: 'users_has_ingredients#users_has_ingredient', via: :ingredient
+  match 'unusers_has_ingredient', to: 'users_has_ingredients#users_has_ingredient', via: :delete
+
   get 'users/show'
-  get 'user_has_ingredients/show'
+  get 'users_has_ingredients/show'
 
   devise_for :users, controllers: { registrations: "registrations" }
  

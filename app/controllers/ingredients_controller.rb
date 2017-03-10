@@ -7,6 +7,8 @@ class IngredientsController < ApplicationController
   def index
   @q = Ingredient.ransack(params[:q])
   @ingredient = @q.result(distinct: true)
+  @top_five = Recipe.joins(:users_has_recipes).group("recipe_id").order("count(recipe_id) DESC LIMIT 5")
+  @favorite_video = UsersHasRecipe.joins(:recipe, :user).where(:user_id => current_user.id).order("name")
   end
   
   # GET /ingredients/1

@@ -80,6 +80,7 @@
 </div>
 
 <div class="wut">
+<br>
 <h3>Hello, <%= current_user.fname %>! You're our favorite customer! </h3>
 </div>
 
@@ -93,7 +94,6 @@
 <%= yield %>
 </div>
 <% end %>
-
 <% if !user_signed_in? %>
 
  <div class="wrapper1">

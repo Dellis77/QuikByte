@@ -7,17 +7,16 @@
 </header>
 <body>
   <% if user_signed_in? %>
-<div class="search">
-
-
+    <div class="search">
+<%= render "shared/top_five" %>
 <h1>Ingredients</h1>
 
-<%= search_form_for @q do |f| %>
+    <%= search_form_for @q do |f| %>
+    <%= f.label :name_cont, "Search For Ingredients" %>
+    <%= f.search_field :name_cont %>
+   <div class="actions"><%= f.submit "Search" %></div>
+ <% end %>
 
-  <%= f.label :name_cont, "Search For Ingredients" %>
-  <%= f.search_field :name_cont %>
-<div class="actions"><%= f.submit "Search" %></div>
-<% end %>
 </div>
 <div class="ingblock">
 <div class="ing-container">
@@ -26,7 +25,9 @@
     <tr>
       <th>Name</th>
       <th>Description</th>
-      <th>Add Ingredient</th>
+      <th></th>
+      <th></th>
+      <th>Options</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -36,23 +37,26 @@
       <tr>
         <td><%= ingredient.name %></td>
         <td><%= ingredient.description %></td>
-        <td> <br/>
-	<%= image_tag(ingredient.image, :width => '80', :height =>'80' ) %>
+     <td> 
+  <br/>
+  <%= image_tag(ingredient.image, :width => '80', :height =>'80' ) %>
 	<%= button_to "Add", new_users_has_ingredient_path,  :method => :get %>
-	<br/>
- </td>
+	 <br/>
+	   <br/>
+
+	 <br/>
+      </td>
         <td><%= link_to 'Show', ingredient %></td>
         <td><%= link_to 'Edit', edit_ingredient_path(ingredient) %></td>
         <td><%= link_to 'Delete', ingredient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
-    <% end %>
+       <% end %>
   </tbody>
-</table>
 
+</table>
 <br>
 
 <%= link_to 'New Ingredient', new_ingredient_path %>
-
 <% end %>
 </div>
 </div>

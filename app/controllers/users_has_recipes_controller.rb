@@ -10,6 +10,7 @@ class UsersHasRecipesController < ApplicationController
   # GET /users_has_recipes/1
   # GET /users_has_recipes/1.json
   def show
+    @users_has_recipes = UsersHasRecipe.order('quantity_purchased * price').limit(3)
   end
 
   # GET /users_has_recipes/new

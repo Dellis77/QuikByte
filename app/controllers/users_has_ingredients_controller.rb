@@ -1,8 +1,23 @@
 class UsersHasIngredientsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_users_has_ingredient, only: [:show, :edit, :update, :destroy]
-  autocomplete :ingredient, :name
   # GET /users_has_ingredients
   # GET /users_has_ingredients.json
+respond_to :js
+
+  def users_has_ingredient
+    @user = current_user
+    @ingredient = Ingredient.find(params[:ingredient_id])
+    @user.users_has_ingredient!(@ingredient)
+  end
+  
+  def unusers_has_ingredient
+    @user = current_user
+    @users_has_ingredient = @user.users_has_ingredients.find_by_ingredient_id(params[:ingredient_id])
+    @ingredient = Ingredient.find(params[:ingredient_id])
+    @users_has_ingredient.destroy!
+  end
+  
   def index
     @users_has_ingredients = UsersHasIngredient.joins(:ingredient).where(:user_id => current_user.id).order("name ASC")
   end

@@ -21,7 +21,7 @@
         <td><%= recipe.name %></td>
         <td><%= recipe.description %></td>
         <td><%= recipe.image %></td>
-        <td><%= recipe.videourl %></td>
+        <td><iframe width="560" height="315" src="<%= recipe.videourl %>" frameborder="0" allowfullscreen></iframe></td>
         <td><%= recipe.instructions %></td>
         <td><%= recipe.preptime %></td>
         <td><%= recipe.cooktime %></td>
@@ -34,7 +34,6 @@
 </table>
 </div>
 </div>
-
 <br>
 
 <%= link_to 'New Recipe', new_recipe_path %>
