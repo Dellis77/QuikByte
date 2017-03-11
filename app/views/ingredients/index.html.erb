@@ -9,6 +9,7 @@
   <% if user_signed_in? %>
     <div class="search">
 <%= render "shared/top_five" %>
+<%= render "shared/quik_recipe" %>
 <h1>Ingredients</h1>
 
     <%= search_form_for @q do |f| %>
