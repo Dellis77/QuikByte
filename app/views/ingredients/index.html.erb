@@ -41,16 +41,18 @@
   <br/>
   <%= image_tag(ingredient.image, :width => '80', :height =>'80' ) %>
 	<%= button_to "Add", new_users_has_ingredient_path,  :method => :get %>
+	  <%= div_for ingredient do %>
+     <%= render partial: "users_has_ingredients/button", locals: { ingredient: ingredient } %>
 	 <br/>
 	   <br/>
-
 	 <br/>
       </td>
         <td><%= link_to 'Show', ingredient %></td>
         <td><%= link_to 'Edit', edit_ingredient_path(ingredient) %></td>
         <td><%= link_to 'Delete', ingredient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
-       <% end %>
+      <% end %>
+    <% end %>
   </tbody>
 
 </table>

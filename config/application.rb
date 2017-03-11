@@ -13,7 +13,6 @@ module QbDev
     
     # -- all .rb files in that directory are automatically loaded.
   ActionMailer::Base.smtp_settings = {
-
   	:address	=> 'smtp.gmail.com',
   	:domain		=> 'mail.google.com',
   	:port 		=> 587,

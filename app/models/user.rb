@@ -1,20 +1,18 @@
 class User < ActiveRecord::Base
 
-#added to connect posts to user
+  # added to connect posts to user
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise  :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, :confirmable
-
-  has_many :users_has_ingredients, foreign_key: "user_id", dependent: :destroy
-  has_many :ingredients, through: :users_has_ingredients, source: :ingredient
-           
+         :recoverable, :rememberable, :trackable, :validatable, :confirmable, :omniauthable
+  
   has_many :posts
   
-  	
-  has_and_belongs_to_many :ingredients
   has_many :users_has_recipes  #many to many
   has_many :recipes, through: :users_has_recipes #for recipe storage
+  
+  has_many :users_has_ingredients  #many to many
+  has_many :ingredients, through: :users_has_ingredients #for recipe storage
 
   # creates a new fav row with ingredient_id and user_id
   def users_has_ingredient!(ingredient)
