@@ -16,6 +16,7 @@
     <% @users_has_ingredients.each do |users_has_ingredient| %>
       <tr>
         <td><%= users_has_ingredient.ingredient.name %></td>
+        <td><%= image_tag(users_has_ingredient.ingredient.image, :width => '80', :height =>'80' ) %></td>
         <td><%= link_to 'Details', users_has_ingredient %></td>
         <td><%= link_to 'Edit', edit_users_has_ingredient_path(users_has_ingredient) %></td>
         <td><%= link_to 'Delete', users_has_ingredient, method: :delete, data: { confirm: 'Are you sure?' } %></td>

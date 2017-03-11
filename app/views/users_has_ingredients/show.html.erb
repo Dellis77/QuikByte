@@ -1,14 +1,7 @@
 
-
-<p>
-  <strong>User:</strong>
-  <%= @users_has_ingredient.user.fname %>
-</p>
-
-<p>
-  <strong>Ingredient:</strong>
-  <%= @users_has_ingredient.ingredient.name %>
-</p>
+  <p><strong>Ingredient:</strong> <%= @users_has_ingredient.ingredient.name %></p>
+  <p><strong>Description:</strong> <%= @users_has_ingredient.ingredient.description %></p>
+  <p><%= image_tag(@users_has_ingredient.ingredient.image, :width => '80', :height =>'80' ) %></p>
 
 <%= link_to 'Edit', edit_users_has_ingredient_path(@users_has_ingredient) %> |
 <%= link_to 'Back', users_has_ingredients_path %>
