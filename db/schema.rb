@@ -10,15 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170306222234) do
+ActiveRecord::Schema.define(version: 20170312055136) do
 
-  create_table "hearts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "post_id"
+  create_table "favorites", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["post_id"], name: "index_hearts_on_post_id", using: :btree
-    t.index ["user_id"], name: "index_hearts_on_user_id", using: :btree
+    t.string   "favorited_type"
+    t.integer  "favorited_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["favorited_type", "favorited_id"], name: "index_favorites_on_favorited_type_and_favorited_id", using: :btree
+    t.index ["user_id"], name: "index_favorites_on_user_id", using: :btree
   end
 
   create_table "ingredients", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -36,13 +37,13 @@ ActiveRecord::Schema.define(version: 20170306222234) do
   end
 
   create_table "recipes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "name",         limit: 45
-    t.string "description"
-    t.string "image",        limit: 45
-    t.string "videourl"
-    t.string "instructions", limit: 250
-    t.string "preptime",     limit: 45
-    t.string "cooktime",     limit: 45
+    t.string  "name",         limit: 45
+    t.string  "description"
+    t.string  "image",        limit: 45
+    t.string  "videourl"
+    t.string  "instructions", limit: 250
+    t.integer "preptime"
+    t.string  "cooktime",     limit: 45
   end
 
   create_table "recipes_has_ingredients", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -93,20 +94,7 @@ ActiveRecord::Schema.define(version: 20170306222234) do
     t.index ["user_id"], name: "fk_users_has_recipes_users_idx", using: :btree
   end
 
-  create_table "votes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "votable_type"
-    t.integer  "votable_id"
-    t.string   "voter_type"
-    t.integer  "voter_id"
-    t.boolean  "vote_flag"
-    t.string   "vote_scope"
-    t.integer  "vote_weight"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.index ["votable_id", "votable_type", "vote_scope"], name: "index_votes_on_votable_id_and_votable_type_and_vote_scope", using: :btree
-    t.index ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope", using: :btree
-  end
-
+  add_foreign_key "favorites", "users"
   add_foreign_key "recipes_has_ingredients", "ingredients", name: "fk_recipes_has_ingredients_ingredients1"
   add_foreign_key "recipes_has_ingredients", "recipes", name: "fk_recipes_has_ingredients_recipes1"
   add_foreign_key "users_has_recipes", "recipes", name: "fk_users_has_recipes_recipes1"

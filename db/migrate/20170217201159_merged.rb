@@ -43,5 +43,5 @@ class Merged < ActiveRecord::Migration[5.0]
   add_foreign_key "users_has_ingredients", "users", name: "fk_users_has_ingredients_users1"
   add_foreign_key "users_has_recipes", "recipes", name: "fk_users_has_recipes_recipes1"
   add_foreign_key "users_has_recipes", "users", name: "fk_users_has_recipes_users"
+  end
 end
-	end
