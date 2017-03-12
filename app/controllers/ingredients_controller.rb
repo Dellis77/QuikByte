@@ -9,10 +9,9 @@ class IngredientsController < ApplicationController
   @ingredient = @q.result(distinct: true)
   @top_five = Recipe.joins(:users_has_recipes).group("recipe_id").order("count(recipe_id) DESC LIMIT 5")
   @favorite_video = UsersHasRecipe.joins(:recipe, :user).where(:user_id => current_user.id).order("name")
-  @quik_recipes = Recipe.order("preptime + cooktime LIMIT 5")
+  @quik_recipes = Recipe.select("(preptime + cooktime) as totaltime, name, videourl").order("totaltime LIMIT 5")
   User.order('name DESC')
   end
-  
   # GET /ingredients/1
   # GET /ingredients/1.json
   def show

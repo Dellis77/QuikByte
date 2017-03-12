@@ -3,11 +3,18 @@
 <table>
   <h1>Quik Recipes</h1>
   <thead>
+    <tr>
+      <th><h2>Recipe Name</h2></th>
+      <th><h2>Total prep/cook time</h2></th>
+      </th>
+    </tr>
   </thead>
 
   <tbody>
     <% @quik_recipes.each do |recipe| %>
       <tr>
+        <td><h3><%= recipe.name %></h3></td>
+        <td><h3><%= recipe.totaltime %> minutes</h3></td>
         <td><iframe width="560" height="315" src="<%= recipe.videourl %>" frameborder="0" allowfullscreen></iframe></td>
       </tr>
     <% end %>
