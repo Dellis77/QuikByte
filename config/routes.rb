@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   resources :users_has_ingredients
   resources :recipes_has_ingredients
   resources :recipes
-  resources :ingredients
+  resources :ingredients do
+    resources :users_has_ingredients, only: [:create]
+  end
   
   get 'users/show'
   get 'users_has_ingredients/show'

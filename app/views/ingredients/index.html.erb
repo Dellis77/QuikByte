@@ -40,8 +40,8 @@
         <td><%= ingredient.description %></td>
      <td> 
   <br/>
-  <%= image_tag(ingredient.image, :width => '80', :height =>'80' ) %>
-	<%= button_to "Add", new_users_has_ingredient_path,  :method => :get %>
+  <%= image_tag(ingredient.image, :width => '80', :height =>'80' )  unless ingredient.image.blank? %>
+	<%= button_to '+', {:controller => "users_has_ingredients", :action => "create", :ingredient_id => ingredient.id} , {:method => :post}  %>
 	 <br/>
 	   <br/>
 	 <br/>

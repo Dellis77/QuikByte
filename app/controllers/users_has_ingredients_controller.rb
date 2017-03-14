@@ -19,6 +19,8 @@ respond_to :js
   end
   
   def index
+    @users_has_ingredients = UsersHasIngredient.all
+      @users_has_ingredient = UsersHasIngredient.new 
     @users_has_ingredients = UsersHasIngredient.joins(:ingredient).where(:user_id => current_user.id).order("name ASC")
   end
 
@@ -30,6 +32,7 @@ respond_to :js
   # GET /users_has_ingredients/new
   def new
     @users_has_ingredient = UsersHasIngredient.new
+    @users_has_ingredient.user_id = current_user.id
   end
 
   # GET /users_has_ingredients/1/edit
@@ -40,14 +43,15 @@ respond_to :js
   # POST /users_has_ingredients.json
   def create
     @users_has_ingredient = UsersHasIngredient.new(users_has_ingredient_params)
+    @users_has_ingredient.user_id = current_user.id
 
     respond_to do |format|
       if @users_has_ingredient.save
-        format.html { redirect_to @users_has_ingredient, notice: 'Users has ingredient was successfully created.' }
+        format.html { redirect_to ingredients_path, notice: 'Ingredient was successfully added.' }
         format.json { render :show, status: :created, location: @users_has_ingredient }
       else
         format.html { render :new }
-        format.json { render json: @users_has_ingredient.errors, status: :unprocessable_entity }
+        format.json { render json: ingredients_path.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -84,6 +88,6 @@ respond_to :js
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def users_has_ingredient_params
-      params.require(:users_has_ingredient).permit(:user_id, :ingredient_id)
+      params.permit(:user_id, :ingredient_id)
     end
 end

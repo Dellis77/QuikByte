@@ -21,6 +21,7 @@ class IngredientsController < ApplicationController
   # GET /ingredients/new
   def new
     @ingredient = Ingredient.new
+    
   end
 
   # GET /ingredients/1/edit
@@ -75,6 +76,6 @@ class IngredientsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def ingredient_params
-      params.require(:ingredient).permit(:name, :description, :image)
+      params.require(:ingredient).permit(:name, :description, :image,)
     end
 end

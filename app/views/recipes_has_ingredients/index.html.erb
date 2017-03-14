@@ -26,3 +26,9 @@
 <br>
 
 <%= link_to 'New Recipes Has Ingredient', new_recipes_has_ingredient_path %>
+
+<% if @recipes.present? %>
+  <%= render @recipes %>
+<% else %>
+  <p>There are no posts containing the term(s) <%= params[:search] %>.</p>
+<% end %>

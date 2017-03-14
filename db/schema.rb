@@ -22,6 +22,15 @@ ActiveRecord::Schema.define(version: 20170312162913) do
     t.index ["user_id"], name: "index_favorites_on_user_id", using: :btree
   end
 
+  create_table "hearts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "post_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_hearts_on_post_id", using: :btree
+    t.index ["user_id"], name: "index_hearts_on_user_id", using: :btree
+  end
+
   create_table "ingredients", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name",        limit: 45
     t.string "description"
@@ -92,6 +101,20 @@ ActiveRecord::Schema.define(version: 20170312162913) do
     t.integer "recipe_id"
     t.index ["recipe_id"], name: "fk_users_has_recipes_recipes1_idx", using: :btree
     t.index ["user_id"], name: "fk_users_has_recipes_users_idx", using: :btree
+  end
+
+  create_table "votes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "votable_type"
+    t.integer  "votable_id"
+    t.string   "voter_type"
+    t.integer  "voter_id"
+    t.boolean  "vote_flag"
+    t.string   "vote_scope"
+    t.integer  "vote_weight"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["votable_id", "votable_type", "vote_scope"], name: "index_votes_on_votable_id_and_votable_type_and_vote_scope", using: :btree
+    t.index ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope", using: :btree
   end
 
   add_foreign_key "favorites", "users"
