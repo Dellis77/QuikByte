@@ -51,7 +51,7 @@ respond_to :js
         format.json { render :show, status: :created, location: @users_has_ingredient }
       else
   
-        format.html {redirect_to ingredients_path, notice: 'Ingredient IS already added.'  }
+        format.html {redirect_to ingredients_path, notice: 'Ingredient IS already in your MyFridge.'  }
       end
     end
   end
