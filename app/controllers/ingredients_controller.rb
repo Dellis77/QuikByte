@@ -2,15 +2,20 @@ class IngredientsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_ingredient, only: [:show, :edit, :update, :destroy]
 
+ 
   # GET /ingredients
   # GET /ingredients.json
   def index
+  @ingredients = Ingredient.all
   @q = Ingredient.ransack(params[:q])
   @ingredient = @q.result(distinct: true)
   @top_five = Recipe.joins(:users_has_recipes).group("recipe_id").order("count(recipe_id) DESC LIMIT 5")
   @favorite_video = UsersHasRecipe.joins(:recipe, :user).where(:user_id => current_user.id).order("name")
   @quik_recipes = Recipe.select("(preptime + cooktime) as totaltime, name, videourl").order("totaltime LIMIT 5")
   User.order('name DESC')
+  
+
+
   end
   # GET /ingredients/1
   # GET /ingredients/1.json
@@ -76,6 +81,6 @@ class IngredientsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def ingredient_params
-      params.require(:ingredient).permit(:name, :description, :image,)
+      params.permit(:name, :description, :image, :id,)
     end
 end

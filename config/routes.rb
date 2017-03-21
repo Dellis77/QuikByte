@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :recipes_has_ingredients
   resources :recipes
   resources :ingredients do
-    resources :users_has_ingredients, only: [:create]
+    resources :users_has_ingredients, only: [:create, :destroy, :delete, :show ]
   end
   
   get 'users/show'

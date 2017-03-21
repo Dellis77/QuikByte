@@ -50,8 +50,8 @@ respond_to :js
         format.html { redirect_to ingredients_path, notice: 'Ingredient was successfully added.' }
         format.json { render :show, status: :created, location: @users_has_ingredient }
       else
-        format.html { render :new }
-        format.json { render json: ingredients_path.errors, status: :unprocessable_entity }
+  
+        format.html {redirect_to ingredients_path, notice: 'Ingredient IS already added.'  }
       end
     end
   end
@@ -83,7 +83,7 @@ respond_to :js
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_users_has_ingredient
-      @users_has_ingredient = UsersHasIngredient.find(params[:id])
+      @users_has_ingredient = UsersHasIngredient.find(params[:id][:ingredient_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
