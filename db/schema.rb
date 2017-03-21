@@ -117,7 +117,6 @@ ActiveRecord::Schema.define(version: 20170312162913) do
     t.index ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope", using: :btree
   end
 
-  add_foreign_key "favorites", "users"
   add_foreign_key "recipes_has_ingredients", "ingredients", name: "fk_recipes_has_ingredients_ingredients1"
   add_foreign_key "recipes_has_ingredients", "recipes", name: "fk_recipes_has_ingredients_recipes1"
   add_foreign_key "users_has_recipes", "recipes", name: "fk_users_has_recipes_recipes1"
