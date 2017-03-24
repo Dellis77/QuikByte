@@ -1,6 +1,8 @@
 <h1><%= current_user.fname %>'s Ingredients</h1>
+
 <div class="ingblock">
 <div class="ing-container">
+
 <table>
   <thead>
     <tr>
@@ -9,9 +11,7 @@
     </tr>
   </thead>
   <tbody>
-    
-    <%= link_to 'Add a New Ingredient', new_users_has_ingredient_path %>
-    <br>
+
   </div>
 <form >
     <% @users_has_ingredients.each do |users_has_ingredient| %>
@@ -19,13 +19,29 @@
         <td><%= users_has_ingredient.ingredient.name %></td>
         <td><%= image_tag(users_has_ingredient.ingredient.image, :width => '80', :height =>'80' ) %></td>
         
-        <td><%= check_box_tag 'ingredient_id[]', users_has_ingredient.ingredient_id -%></td>
+        <td><%= check_box_tag 'ing_id[]', users_has_ingredient.ingredient_id -%></td>
         <td><%= h users_has_ingredient.ingredient_id -%></td>
         
         <td><%= link_to 'Details', users_has_ingredient %></td>
         <td><%= link_to 'Edit', edit_users_has_ingredient_path(users_has_ingredient) %></td>
         <td><%= link_to 'Delete', users_has_ingredient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        
       </tr>
     <% end %>
-  <%= submit_tag "search" %>
+
+  <%= submit_tag "Search" %>
+
+  
+
+  <table>
+  <thead>
+    <tr>
+      <th> <%= render "shared/gen" %></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  
+<hr>
+<h1>Results</h1>
 </form>
+</div>

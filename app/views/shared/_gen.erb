@@ -1,0 +1,24 @@
+
+
+<table>
+
+  <thead>
+    <tr>
+      <th><h2>Recipe Name</h2></th>
+      <th><h2>Recipe Video</h2></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @gen.each do |recipes_has_ingredient| %>
+      <tr>
+        <td><h3><%= recipes_has_ingredient.recipe.name %></h3></td>
+        <td><iframe width="350" height="200" src="<%= recipes_has_ingredient.recipe.videourl %>" frameborder="0" allowfullscreen></iframe></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+</div>
+
+<br>

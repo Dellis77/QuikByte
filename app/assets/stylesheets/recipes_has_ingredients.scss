@@ -1,3 +1,18 @@
 // Place all the styles related to the RecipesHasIngredients controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.recblock {
+  width: 465px;
+
+  margin: 16px;
+  font-size: 16px;
+  
+}
+
+.rec-container {
+  background: #e3e1df;
+  padding: 12px;
+  box-shadow: 2px -2px 5px #888888;
+
+}

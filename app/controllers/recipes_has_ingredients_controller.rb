@@ -4,7 +4,7 @@ class RecipesHasIngredientsController < ApplicationController
   # GET /recipes_has_ingredients
   # GET /recipes_has_ingredients.json
   def index
-    @recipes_has_ingredients = RecipesHasIngredient.joins(:recipe, :ingredient).where(:recipe_id => '2')
+    @recipes_has_ingredients = RecipesHasIngredient.all
   end
 
   # GET /recipes_has_ingredients/1

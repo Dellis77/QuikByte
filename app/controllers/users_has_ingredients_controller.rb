@@ -16,12 +16,18 @@ respond_to :js
     @users_has_ingredient = @user.users_has_ingredients.find_by_ingredient_id(params[:ingredient_id])
     @ingredient = Ingredient.find(params[:ingredient_id])
     @users_has_ingredient.destroy!
+    
   end
   
   def index
     @users_has_ingredients = UsersHasIngredient.all
       @users_has_ingredient = UsersHasIngredient.new 
     @users_has_ingredients = UsersHasIngredient.joins(:ingredient).where(:user_id => current_user.id).order("name ASC")
+    @ids = params[:ing_id]
+    @ids = @ids.try(:split, ",")
+    @gen = RecipesHasIngredient.where(:ingredient_id => @ids.to_a).uniq
+#@ids.to_a
+   # @gen = Recipe.select("name, videourl").limit(4)
   end
 
   # GET /users_has_ingredients/1

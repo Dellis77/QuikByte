@@ -13,8 +13,7 @@ class IngredientsController < ApplicationController
   @favorite_video = UsersHasRecipe.joins(:recipe, :user).where(:user_id => current_user.id).order("name")
   @quik_recipes = Recipe.select("(preptime + cooktime) as totaltime, name, videourl").order("totaltime LIMIT 5")
   User.order('name DESC')
-  
-
+ 
 
   end
   # GET /ingredients/1

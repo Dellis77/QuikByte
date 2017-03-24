@@ -9,7 +9,7 @@
     <% @top_five.each_with_index do |recipe, index| %>
       <tr>
         <td><h1># <%= index + 1 %></h1></td>
-        <td><iframe width="560" height="315" src="<%= recipe.videourl %>" frameborder="0" allowfullscreen></iframe></td>
+        <td><iframe width="380" height="200" src="<%= recipe.videourl %>" frameborder="0" allowfullscreen></iframe></td>
       </tr>
     <% end %>
   </tbody>
