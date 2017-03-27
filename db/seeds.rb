@@ -24,7 +24,4 @@ Recipe.create!([
   {name: "Fettuccini Alfredo", description: "Italian", image: "", videourl: "https://www.youtube.com/embed/C9Jx91A7CzI", instructions: "Cook pasta until done. Add ingredients and heat over low.", preptime: "12", cooktime: "15"},
   {name: "Churros", description: "Dessert", image: "", videourl: "https://www.youtube.com/embed/coXSTY6FOF0", instructions: "Fry em' till they're done!", preptime: "5", cooktime: "8"}
 ])
-UsersHasRecipe.create!([
-  {user_id: 1, recipe_id: 1},
 
-])

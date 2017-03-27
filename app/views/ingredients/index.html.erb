@@ -43,12 +43,11 @@
   <%= image_tag(ingredient.image, :width => '80', :height =>'80' )  unless ingredient.image.blank? %>
   
 
-<%= div_for ingredient do %>
+
 <% if ingredient.id == @Uing %>
     <p>Added</p>
 <% else %>
     <%= button_to 'Add', {:controller => "users_has_ingredients", :action => "create", :id => ingredient.id} , {:method => :post}  %>
-<% end %>
 <% end %>
 
 

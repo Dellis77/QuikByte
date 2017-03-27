@@ -8,5 +8,10 @@
   <%= @recipes_has_ingredient.ingredient.name %>
 </p>
 
+<p>
+  <strong>Quantity:</strong>
+  <%= @recipes_has_ingredient.quantity %>
+</p>
+
 <%= link_to 'Edit', edit_recipes_has_ingredient_path(@recipes_has_ingredient) %> |
 <%= link_to 'Back', recipes_has_ingredients_path %>
