@@ -3,21 +3,7 @@ class UsersHasIngredientsController < ApplicationController
   before_action :set_users_has_ingredient, only: [:show, :edit, :update, :destroy]
   # GET /users_has_ingredients
   # GET /users_has_ingredients.json
-respond_to :js
 
-  def users_has_ingredient
-    @user = current_user
-    @ingredient = Ingredient.find(params[:ingredient_id])
-    @user.users_has_ingredient!(@ingredient)
-  end
-  
-  def unusers_has_ingredient
-    @user = current_user
-    @users_has_ingredient = @user.users_has_ingredients.find_by_ingredient_id(params[:ingredient_id])
-    @ingredient = Ingredient.find(params[:ingredient_id])
-    @users_has_ingredient.destroy!
-    
-  end
   
   def index
     @users_has_ingredients = UsersHasIngredient.all
@@ -25,7 +11,7 @@ respond_to :js
     @users_has_ingredients = UsersHasIngredient.joins(:ingredient).where(:user_id => current_user.id).order("name ASC")
     @ids = params[:ing_id]
     @ids = @ids.try(:split, ",")
-    @gen = RecipesHasIngredient.where(:ingredient_id => @ids.to_a).uniq
+    @gen = RecipesHasIngredient.where(:ingredient_id => @ids.to_a)
 #@ids.to_a
    # @gen = Recipe.select("name, videourl").limit(4)
   end
@@ -39,6 +25,7 @@ respond_to :js
   def new
     @users_has_ingredient = UsersHasIngredient.new
     @users_has_ingredient.user_id = current_user.id
+    @users_has_ingredient.id = @users_has_ingredient.ingredient_id
   end
 
   # GET /users_has_ingredients/1/edit
@@ -50,7 +37,8 @@ respond_to :js
   def create
     @users_has_ingredient = UsersHasIngredient.new(users_has_ingredient_params)
     @users_has_ingredient.user_id = current_user.id
-
+    @users_has_ingredient.ingredient_id = @users_has_ingredient.id
+    
     respond_to do |format|
       if @users_has_ingredient.save
         format.html { redirect_to ingredients_path, notice: 'Ingredient was successfully added.' }
@@ -94,6 +82,6 @@ respond_to :js
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def users_has_ingredient_params
-      params.permit(:user_id, :ingredient_id)
+      params.permit(:user_id, :ingredient_id, :id)
     end
 end

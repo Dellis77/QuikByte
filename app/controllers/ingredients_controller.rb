@@ -14,8 +14,12 @@ class IngredientsController < ApplicationController
   @quik_recipes = Recipe.select("(preptime + cooktime) as totaltime, name, videourl").order("totaltime LIMIT 5")
   User.order('name DESC')
  
+  @Uing = UsersHasIngredient.find_each
+  
+  
 
   end
+  
   # GET /ingredients/1
   # GET /ingredients/1.json
   def show

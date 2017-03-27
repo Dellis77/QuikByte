@@ -16,6 +16,8 @@ class UsersHasRecipesController < ApplicationController
   # GET /users_has_recipes/new
   def new
     @users_has_recipe = UsersHasRecipe.new
+    @users_has_recipe.user_id = current_user.id
+    @users_has_recipe.id =  @users_has_recipe.recipe_id
   end
 
   # GET /users_has_recipes/1/edit
@@ -26,7 +28,9 @@ class UsersHasRecipesController < ApplicationController
   # POST /users_has_recipes.json
   def create
     @users_has_recipe = UsersHasRecipe.new(users_has_recipe_params)
-
+    @users_has_recipe.user_id = current_user.id
+    @users_has_recipe.id =  @users_has_recipe.recipe_id
+    
     respond_to do |format|
       if @users_has_recipe.save
         format.html { redirect_to @users_has_recipe, notice: 'Users has recipe was successfully created.' }
@@ -70,6 +74,6 @@ class UsersHasRecipesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def users_has_recipe_params
-      params.require(:users_has_recipe).permit(:user_id, :recipe_id)
+      params.permit(:user_id, :recipe_id, :id)
     end
 end

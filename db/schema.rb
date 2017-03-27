@@ -12,29 +12,17 @@
 
 ActiveRecord::Schema.define(version: 20170312162913) do
 
-  create_table "favorites", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "user_id"
-    t.string   "favorited_type"
-    t.integer  "favorited_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-    t.index ["favorited_type", "favorited_id"], name: "index_favorites_on_favorited_type_and_favorited_id", using: :btree
-    t.index ["user_id"], name: "index_favorites_on_user_id", using: :btree
-  end
-
-  create_table "hearts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "post_id"
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["post_id"], name: "index_hearts_on_post_id", using: :btree
-    t.index ["user_id"], name: "index_hearts_on_user_id", using: :btree
-  end
-
   create_table "ingredients", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name",        limit: 45
     t.string "description"
     t.string "image",       limit: 45
+  end
+
+  create_table "ingredients_users", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "ingredient_id"
+    t.integer "user_id"
+    t.index ["ingredient_id"], name: "index_ingredients_users_on_ingredient_id", using: :btree
+    t.index ["user_id"], name: "index_ingredients_users_on_user_id", using: :btree
   end
 
   create_table "posts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -88,12 +76,10 @@ ActiveRecord::Schema.define(version: 20170312162913) do
   end
 
   create_table "users_has_ingredients", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "ingredient_id"
-    t.integer  "user_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.index ["ingredient_id"], name: "index_users_has_ingredients_on_ingredient_id", using: :btree
-    t.index ["user_id"], name: "index_users_has_ingredients_on_user_id", using: :btree
+    t.integer "user_id"
+    t.integer "ingredient_id"
+    t.index ["ingredient_id"], name: "fk_users_has_ingredients_ingredients1_idx", using: :btree
+    t.index ["user_id"], name: "fk_users_has_ingredients_users1_idx", using: :btree
   end
 
   create_table "users_has_recipes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -103,22 +89,10 @@ ActiveRecord::Schema.define(version: 20170312162913) do
     t.index ["user_id"], name: "fk_users_has_recipes_users_idx", using: :btree
   end
 
-  create_table "votes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "votable_type"
-    t.integer  "votable_id"
-    t.string   "voter_type"
-    t.integer  "voter_id"
-    t.boolean  "vote_flag"
-    t.string   "vote_scope"
-    t.integer  "vote_weight"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.index ["votable_id", "votable_type", "vote_scope"], name: "index_votes_on_votable_id_and_votable_type_and_vote_scope", using: :btree
-    t.index ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope", using: :btree
-  end
-
   add_foreign_key "recipes_has_ingredients", "ingredients", name: "fk_recipes_has_ingredients_ingredients1"
   add_foreign_key "recipes_has_ingredients", "recipes", name: "fk_recipes_has_ingredients_recipes1"
+  add_foreign_key "users_has_ingredients", "ingredients", name: "fk_users_has_ingredients_ingredients1"
+  add_foreign_key "users_has_ingredients", "users", name: "fk_users_has_ingredients_users1"
   add_foreign_key "users_has_recipes", "recipes", name: "fk_users_has_recipes_recipes1"
   add_foreign_key "users_has_recipes", "users", name: "fk_users_has_recipes_users"
 end
