@@ -2,12 +2,19 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .ingblock {
-  width: 500px;
+  width: 560px;
   height: 650px;
   margin: 16px auto;
   font-size: 16px;
   overflow: scroll;
   
+}
+
+.centered {
+  width: 200px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .ing-container {

@@ -7,13 +7,12 @@ class UsersHasIngredientsController < ApplicationController
   
   def index
     @users_has_ingredients = UsersHasIngredient.all
-      @users_has_ingredient = UsersHasIngredient.new 
+    @users_has_ingredient = UsersHasIngredient.new 
     @users_has_ingredients = UsersHasIngredient.joins(:ingredient).where(:user_id => current_user.id).order("name ASC")
     @ids = params[:ing_id]
     @ids = @ids.try(:split, ",")
-    @gen = RecipesHasIngredient.where(:ingredient_id => @ids.to_a)
-#@ids.to_a
-   # @gen = Recipe.select("name, videourl").limit(4)
+    @gen = RecipesHasIngredient.where(:ingredient_id => @ids.to_a).group('recipe_id').order('count(recipe_id) DESC LIMIT 50')
+
   end
 
   # GET /users_has_ingredients/1
@@ -25,7 +24,6 @@ class UsersHasIngredientsController < ApplicationController
   def new
     @users_has_ingredient = UsersHasIngredient.new
     @users_has_ingredient.user_id = current_user.id
-    @users_has_ingredient.id = @users_has_ingredient.ingredient_id
   end
 
   # GET /users_has_ingredients/1/edit
@@ -34,18 +32,18 @@ class UsersHasIngredientsController < ApplicationController
 
   # POST /users_has_ingredients
   # POST /users_has_ingredients.json
+  
   def create
     @users_has_ingredient = UsersHasIngredient.new(users_has_ingredient_params)
     @users_has_ingredient.user_id = current_user.id
-    @users_has_ingredient.ingredient_id = @users_has_ingredient.id
-    
+
     respond_to do |format|
       if @users_has_ingredient.save
         format.html { redirect_to ingredients_path, notice: 'Ingredient was successfully added.' }
         format.json { render :show, status: :created, location: @users_has_ingredient }
       else
   
-        format.html {redirect_to ingredients_path, notice: 'Ingredient IS already in your MyFridge.'  }
+        format.html {redirect_to ingredients_path, notice: 'Ingredient is already in your MyFridge.'  }
       end
     end
   end

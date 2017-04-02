@@ -1,11 +1,10 @@
-
-
 <table>
 
   <thead>
     <tr>
       <th><h2>Recipe Name</h2></th>
       <th><h2>Recipe Video</h2></th>
+      <th><h5>Ingredient Count</h5></th>
     </tr>
   </thead>
 
@@ -14,7 +13,8 @@
       <tr>
         <td><h3><%= recipes_has_ingredient.recipe.name %></h3></td>
         <td><iframe width="350" height="200" src="<%= recipes_has_ingredient.recipe.videourl %>" frameborder="0" allowfullscreen></iframe></td>
-        <%= button_to 'Favorite', {:controller => "users_has_recipes", :action => "new", :recipe_id => recipes_has_ingredient.recipe.id} , {:method => :post}  %>
+        <td><h5><%= @gen.count %></h5></td>
+        <td><%= button_to 'Favorite', {:controller => "users_has_recipes", :action => "create", :recipe_id => recipes_has_ingredient.recipe.id} , {:method => :post}  %></td>
       </tr>
     <% end %>
   </tbody>
