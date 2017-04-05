@@ -31,7 +31,7 @@
 <ul class="social">
         <li class="socialitem"><a target="_blank" href="https://www.facebook.com/theworldtocome/">f</a></li>
         <li class="socialitem"><a target="_blank" href="https://twitter.com/TWTCmusic">t</a></li>
-        <li class="socialitem"><a target="_blank" href="mailto:quikbyteapp@gmail.com">g+</a></li>
+        
         <li class="socialitem"><a target="_blank" href="https://www.instagram.com/twtcband/">in</a></li>
         <li class="socialitem"><a target="_blank" href="#">p</a></li>
 </ul>
@@ -66,7 +66,10 @@
   
 </ul>
 
-
+<div class="who">
+  <button><%= link_to "Logout", destroy_user_session_path, :method => :delete %>
+</button>
+</div>
 
 
   </div>
@@ -75,10 +78,7 @@
   </div>
 </header>
 
-<div class="who">
-  <button><%= link_to "Logout", destroy_user_session_path, :method => :delete %>
-</button>
-</div>
+
 
 </div>
 

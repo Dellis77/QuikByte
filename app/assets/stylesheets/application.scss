@@ -12,13 +12,14 @@
  *
  *= require_tree .
  *= require_self
+
  */
 
-
+ 
 html, body {
-    background: # none repeat scroll 0 0;
+    background: none repeat scroll 0 0;
     color: #000;
-    font: 100%/1.4 tahoma,sans-serif;
+    font: 100%/1.4 Helvetica, Arial,Helvetica Neue;
 }
 
 body {
@@ -53,37 +54,29 @@ head {
     right: 0;
     top: 0;
 }
-.mainMenu {
-    background-color: #ddd;
-    border: 2px solid #888;
-    border-radius: 0.2em;
-    color: #555;
-    height: 500px;
-    list-style-type: none;
-    overflow-y: auto;
-    padding: 0.5em;
-    width: 71%;
-}
 
 .logo {
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.7);
     background-image: url("logos/QuikByte Logo.png");
     background-position: absolute;
     background-repeat: no-repeat;
     background-size: 14% auto;
     height: 86px;
-    
-    opacity: 0.60;
-    position: absolute;
-    
+    z-index: 0;
+    box-shadow: 2px 2px 5px #888888;
+
+    position: fixed;
+    top: 0;
     width: 100%;
 }
 .topmenu {
+    
     bottom: -7%;
     left: 10%;
     list-style: outside none none;
     position: center;
     text-align: center;
+    
 }
 .menuitem {
     border-right: 3px solid;
@@ -91,6 +84,7 @@ head {
     font-size: 20px;
     padding: 3px 10px;
     text-transform: uppercase;
+    
 
 }
 .social {
@@ -112,6 +106,7 @@ head {
     color: #333;
     font-weight: bold;
     text-decoration: none;
+    background-color: transparent;
 }
 .banner {
     background-image: url("banner/banS7.png");
@@ -119,10 +114,10 @@ head {
     background-repeat: no-repeat;
     height: 55%;
     
-    
     margin-top:0;
     
     width: 100%;
+    
 }
 
 
@@ -134,8 +129,8 @@ head {
 /* mouse over link */
 .menuitem a:hover {
 	text-decoration: none;
-        border-bottom: 3px solid;
-        border-bottom-color: red;
+    border-bottom: 3px solid;
+    border-bottom-color: red;
     color: #63a163;
 }
 
@@ -161,17 +156,6 @@ head {
 	text-align: center;
 }
 
-.who button{
-	list-style: outside none none;
-    position: absolute;
-    top:0%;
-    right: 0;
-    background-color: #f2f2f2; 
-    font-size: 16px;
-    padding: 10px 25px;
-opacity: 0.70;
-}
-    
 .wrapper1
  {
  	height: 350px;
@@ -187,11 +171,13 @@ opacity: 0.70;
     font-size: 16px;
     padding: 10px 25px;
 opacity: 0.70;
+background-color: transparent;
 }
 
 a:link { 
 	text-decoration: none;
   color: #5a5b5a;
+  background-color: transparent;
 }
 a:visited { 
   color: #5a5b5a;

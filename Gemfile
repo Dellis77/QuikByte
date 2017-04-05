@@ -36,6 +36,8 @@ gem 'jquery-ui-rails'
 
 #gem 'autocomplete_rails'
 gem 'ransack'
+
+gem 'bootstrap', '~> 4.0.0.alpha6'
 # jQuery UI dependency.
 #gem 'jquery-ui-rails'
 # Use Redis adapter to run Action Cable in production
