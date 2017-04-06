@@ -9,13 +9,17 @@
 </p>
 
 <p>
-  <strong>Image:</strong>
-  <%= @recipe.image %>
-</p>
-
-<p>
-  <strong>Videourl:</strong>
-  <%= @recipe.videourl %>
+  <strong>Ingredients:</strong>
+    <% @ingredients.each_with_index do |recipeshasingredient, index| %>
+      <% if index != @ingredients.size - 1 %>
+        <%= recipeshasingredient.quantity %> 
+        <%= recipeshasingredient.ingredient.name %>,
+      <% end %>
+      <% if index == @ingredients.size - 1 %>
+        <%= recipeshasingredient.quantity %> 
+        <%= recipeshasingredient.ingredient.name %>
+      <% end %>
+   <% end %>
 </p>
 
 <p>
