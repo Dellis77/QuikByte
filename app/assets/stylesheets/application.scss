@@ -252,8 +252,8 @@ a:active {
 
 footer {
     padding: 1em;
-    color: black;
-    background-color: #63a163;
+    color: white;
+    background-color: #5a5b5a;
     clear: left;
     text-align: center;
     bottom: 0px;
@@ -261,7 +261,7 @@ footer {
 }
 
 footer.socialitem a{
-    color: black;
+    color: white;
     font-weight: bold;
     text-decoration: none;
     background-color: transparent;
@@ -284,13 +284,17 @@ footer .socialitem  {
     height: 28px;
 }
 
-footer .socialitem a:hover { 
-  color: white;
+footer .social .socialitem, ul, li a:visited, a:link {
+    color: white;
+}
+
+footer .socialitem li a:hover { 
+  color:  #00cc7a;
 }
 footer .socialitem ul, li{ 
    text-align: center;
 
-   color: black;
+   color: white;
 }
 
 .welcome {
