@@ -164,7 +164,9 @@ head {
 }
 
 .menuitem .current {
-    color: white;}
+    color: white;
+    
+}
 
 .wut h3 {
 	position: bottom;
@@ -284,7 +286,7 @@ footer .socialitem  {
     height: 28px;
 }
 
-footer .social .socialitem, ul, li a:visited, a:link {
+footer a:visited {
     color: white;
 }
 
@@ -304,7 +306,7 @@ footer .socialitem ul, li{
 }
 
 .welcome1 {
-   background: #e6f9ff;
+   background: #b1d1b1;
   padding: 12px;
      text-align: center;
      
