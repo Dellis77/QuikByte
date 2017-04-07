@@ -1,35 +1,46 @@
-<!DOCTYPE html> 
-<html>
-
+<doctype! html5>
+<html lang="en">
 <head>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <meta charset="UTF-8">
+    <title>Login page</title>
+  
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    
+ 
     
 </head>
+<body>
 
-<body> 
 
-            <div class="login2">
+<button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Sign Up!</button>
+
+<div id="id02" class="modal">
+  
+  <div class="modal-content animate" >
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <%= image_tag("Av/Avatar.png", width: '50px') %>
+    </div>
+
+    <div class="container">
+
+ <div class="login2">
             
-           
-            <div class="logo2">
-                <span class="float-right">
-                
-                <a class="button", href="/users/sign_in"> Login</a>
-                </span>
-            </div>
-            
+
             <%= form_for(resource, as: resource_name, :html=> {:class=>'large-12 medium-12 columns'}, url: registration_path(resource_name)) do |f| %>  
             
 
                 <div class="login-container2">
 
-                    <h4 class="text-center">Sign up</h4>
 
-                    <%= devise_error_messages! %>
                     <br>
 
                     
                         <div class="field">
+                          
+
+
+     <%= devise_error_messages! %>
     <%= f.label :"First Name" %><br/>
     <%= f.text_field :fname, autofocus: "true" %><br/>
     <%= f.label :"Last Name" %><br/>
@@ -65,8 +76,27 @@
 
             <% end %>
 
-                </div>
+                
+      <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+  </div>
+</div>
 
+<script>
+// Get the modal
+var modal = document.getElementById('id02');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+                
+            </div>
+        </div>
+        </div>
+        </div>
 </div>
 
 

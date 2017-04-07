@@ -1,3 +1,12 @@
+<!Doctype HTML>
+<HTML>
+<header>
+
+<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+</header>
+<body>
+
 <h1><%= current_user.fname %>'s Ingredients</h1>
 
 <div class="ingblock">
@@ -30,12 +39,20 @@
   <table>
         <%= submit_tag "Generate Recipe(s)" %>
   <thead>
-  </form>  
+
     <tr>
       <th> <%= render "shared/gen" %></th>
       <th colspan="3"></th>
     </tr>
   </thead>
+
 <hr>
 <h1>Results</h1>
 </div>
+  </table>
+  </form>  
+</div>
+</div>
+</div>
+</body>
+</HTML>
