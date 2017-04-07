@@ -127,14 +127,7 @@
     <h4>TAKE THE GUESSING OUT OF COOKING,</h4>
    <h1>LET US FIX YOU A BYTE TO EAT.</h1>
    
-    <div class="con2"                 
-    <%= render "shared/signin" %>
-    
-    </div> 
-        <div class="con3"                 
-    <%= render "shared/login" %>
-    
-    </div>  
+ 
 
    </div>
 
@@ -168,11 +161,26 @@
 
     </div> <!-- banner div -->
 
-<div class="dapost">
+
      <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
   
+<table>
+  <tr>
+    <th><%= render "shared/login" %> </th>
+    <th><hr/></th>
+    <th>OR</th>
+    <th><hr/></th>
+    <th><%= render "shared/signin" %></th>
+  </tr>
+</table>     
+<br/>
+<br/>
+<br/>
+<br/>
 
+    
+    
 
 
 <div class="welcome">

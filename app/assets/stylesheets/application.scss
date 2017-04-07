@@ -110,6 +110,7 @@ head {
     position: fixed;
     top: 0px;
     width: 100%;
+    z-index: 3;
 }
 .topmenu {
     
@@ -268,20 +269,19 @@ footer.socialitem a{
 }
 
 footer.social {
-    list-style: outside none none;
-    position: absolute;
     top:22px;
-    right: 0;
-     text-align: center;
+
+    text-align: center;
 }
 footer .socialitem  {
     border: 1px solid;
-    border-radius: 4em;
+
     display: inline-block;
-    font-size: 18px;
-    padding: 5px;
+    font-size: 20px;
+
     text-align: center;
-    width: 25px;
+    width: 28px;
+    height: 28px;
 }
 
 footer .socialitem a:hover { 
@@ -289,7 +289,7 @@ footer .socialitem a:hover {
 }
 footer .socialitem ul, li{ 
    text-align: center;
-   left: 0xp;
+
    color: black;
 }
 
@@ -326,6 +326,21 @@ footer .socialitem ul, li{
 
 .fooditem ul, li{ 
    text-align: center;
-   left: 0xp;
+
    color: black;
 }
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 20%;
+      margin-left: auto;
+  margin-right: auto;
+}
+
+td, th {
+    border: none;
+    text-align: center;
+    padding: 8px;
+}
+
