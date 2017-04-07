@@ -10,6 +10,7 @@ class RecipesController < ApplicationController
   # GET /recipes/1
   # GET /recipes/1.json
   def show
+    @ingredients = RecipesHasIngredient.joins(:ingredient).where(:recipe_id => params[:id])
   end
 
   # GET /recipes/new
