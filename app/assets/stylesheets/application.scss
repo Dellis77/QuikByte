@@ -122,9 +122,9 @@ head {
     
 }
 .menuitem {
-    border-right: 3px solid;
+    
     display: inline-block;
-    font-size: 20px;
+    font-size: 22px;
     padding: 3px 10px;
 
     text-transform: uppercase;
@@ -163,8 +163,11 @@ head {
     color: #63a163;
 }
 
-.menuitem .current {
-    color: white;
+.menuitem a:active {
+    text-decoration: none;
+    border-bottom: 3px solid;
+    border-bottom-color: red;
+    color: #63a163;
     
 }
 
@@ -280,7 +283,7 @@ footer .socialitem  {
 
     display: inline-block;
     font-size: 20px;
-
+color: white;
     text-align: center;
     width: 28px;
     height: 28px;
@@ -348,5 +351,9 @@ td, th {
     border: none;
     text-align: center;
     padding: 8px;
+}
+
+p {
+    text-align: center;
 }
 

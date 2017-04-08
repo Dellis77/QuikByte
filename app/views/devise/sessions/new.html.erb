@@ -1,28 +1,4 @@
-<doctype! html5>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Login page</title>
-  
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    
- 
-    
-</head>
-<body>
 
-
-<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
-
-<div id="id01" class="modal">
-  
-  <div class="modal-content animate" >
-    <div class="imgcontainer">
-      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-      <%= image_tag("Av/Avatar.png", width: '250px') %>
-    </div>
-
-    <div class="container">
 
             <div class="logo2">
                 
@@ -45,20 +21,17 @@
 <br><br>
 
                   <%= f.submit "Submit"  %>
-                
+                <%= render "devise/shared/links" %>
                   <% if devise_mapping.rememberable? -%>
                     <%= f.check_box :remember_me %>
                     <%= f.label :remember_me %>
                   <% end -%>
-  
+                  
                     </div>
-<%= render "devise/shared/links" %>
+
                 <% end %>
                 
-                
-      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-  </form>
-</div>
+
 
 <script>
 // Get the modal
