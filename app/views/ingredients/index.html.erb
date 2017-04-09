@@ -7,22 +7,36 @@
 </header>
 <body>
   <% if user_signed_in? %>
-    <div class="search">
-<%= render "shared/top_five" %>
-<%= render "shared/quik_recipe" %>
+  
+<table class="ult">
+    <tr>
+     
+  <th>  
+  <div class="ingblock">
+<div class="search">
+
 <h1>Ingredients</h1>
 
     <%= search_form_for @q do |f| %>
-    <%= f.label :name_cont, "Search For Ingredients" %>
-    <%= f.search_field :name_cont %>
-   <div class="actions"><%= f.submit "Search" %></div>
+    <table class="tabs">
+      <tr>
+        <td><%= f.label :name_cont, "Search For Ingredients" %></td>
+      </tr>
+    <tr>
+    <td><%= f.search_field :name_cont %></td>
+    </tr>
+    <tr>
+    <td>
+   <%= f.submit "Search" %></td>
+   </tr>
+   </table>
  <% end %>
-
+<hr/>
 </div>
-<div class="ingblock">
-<div class="ing-container">
+
+
 <table>
-  <thead>
+
     <tr>
       <th>Name</th>
       <th>Description</th>
@@ -56,8 +70,6 @@
      <br/>
       </td>
         <td><%= link_to 'Show', ingredient %></td>
-        <td><%= link_to 'Edit', edit_ingredient_path(ingredient) %></td>
-        <td><%= link_to 'Delete', ingredient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
    
     <% end %>
@@ -68,6 +80,35 @@
 
 <%= link_to 'New Ingredient', new_ingredient_path %>
 <% end %>
+</th>
+
+ <th>
+
+  <table>
+    <thead>
+    <tr>
+      <th><h2>Most Popular Recipes</h2></th>
+    </tr>
+    </thead>
+        <tr>
+      <td><%= render "shared/top_five" %></td>
+    </tr>
+     <thead>
+    <tr>
+      <th><h2>Quik Recipes</h2></th>
+    </tr>
+    </thead>
+    <tr>
+    
+      <td><%= render "shared/quik_recipe" %></td>
+    </tr>
+</table>
+</th>
+
+
+</tr>
+
+</table>
 </div>
 </div>
 </div>

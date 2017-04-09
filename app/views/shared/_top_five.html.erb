@@ -1,15 +1,15 @@
 <div class="ingblock1">
-<div class="ing-container1">
+
 <table>
-  <h1>Most Popular Recipes</h1>
+
   <thead>
   </thead>
   <tbody>
     <div class="centered">
     <% @top_five.each_with_index do |recipe, index| %>
       <tr>
-        <td><h1># <%= index + 1 %></h1></td>
-        <td><iframe width="380" height="200" src="<%= recipe.videourl %>" frameborder="0" allowfullscreen></iframe></td>
+        <td><h1>#<%= index + 1 %></h1></td>
+        <th><iframe width="300" height="200" src="<%= recipe.videourl %>" frameborder="0" allowfullscreen></iframe></th>
       </tr>
     <% end %>
     </div>

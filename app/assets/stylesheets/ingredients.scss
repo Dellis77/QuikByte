@@ -2,24 +2,64 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.inglockr,table {
 
-   text-align: center;
-   width: 100%;
-   height: 100%;
-}
 
-.ingblock1 {
-  width: 1010px;
+.ingblock {
+  width: 500px;
+  height: 1000px;
+  overflow: auto;
   margin: 16px auto;
-  font-size: 16px;
+  font-size: 15px;
+    background: #e3e1df;
+     padding: 12px;
+  box-shadow: 2px -2px 5px #888888;
   
 }
 
-.ing-container1 {
+.ingblock1 {
+  width: 400px;
+  height: 400px;
+  overflow: auto;
+  margin: 16px auto;
+  font-size: 8px;
   background: #e3e1df;
   padding: 12px;
   box-shadow: 2px -2px 5px #888888;
+  
+}
+
+
+
+.search input {
+  box-sizing: border-box;
+  width: 100%;
+  border-width: 1px;
+  border-style: solid;
+  padding: 16px;
+  outline: 0;
+  font-family: inherit;
+  font-size: 0.95em;
+  text-align: center;
+  
 
 }
+
+.search input[type="submit"] {
+  background: #52855d;
+  border-color: transparent;
+  color: #ffffff;
+  cursor: pointer;
+
+}
+
+.search input[type="submit"]:hover {
+  background: #63a163;
+}
+
+table .ult, .tabs, td{
+  width: 75%;
+}
+
+
+
 

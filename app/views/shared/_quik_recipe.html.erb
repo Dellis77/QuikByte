@@ -1,11 +1,10 @@
 <div class="ingblock1">
-<div class="ing-container1">
+
 <table>
-  <h1>Quik Recipes</h1>
+
   <thead>
     <tr>
-      <th><h2>Recipe Name</h2></th>
-      <th><h2>Total prep/cook time</h2></th>
+      <th><h2><u>Recipe Name</u></h2></th>
       </th>
     </tr>
   </thead>
@@ -14,8 +13,17 @@
     <% @quik_recipes.each do |recipe| %>
       <tr>
         <td><h3><%= recipe.name %></h3></td>
+      </tr>
+      
+        <thead>
+    <tr>
+      <th><iframe width="300" height="200" src="<%= recipe.videourl %>" frameborder="0" allowfullscreen></iframe></th>
+      </th>
+    </tr>
+  </thead>
+      <tr>
         <td><h3><%= recipe.totaltime %> minutes</h3></td>
-        <td><iframe width="380" height="200" src="<%= recipe.videourl %>" frameborder="0" allowfullscreen></iframe></td>
+        <td></td>
       </tr>
     <% end %>
   </tbody>
