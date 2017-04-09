@@ -17,18 +17,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
  
-html, body {
-    background: none repeat scroll 0 0;
-    color: #000;
-    font: 100%/1.4 Helvetica, Arial,Helvetica Neue;
-    
-}
 
-body {
-    margin: 0;
-    font-size: 0.8em;
-    overflow: scroll;
-}
 .con1 h1{
    
    position: absolute;
@@ -85,17 +74,7 @@ head {
 	margin: 0;
 }
 
-.containers {
-    position: fixed;
-}
-.center {
-    bottom: 0;
-    left: 0;
-    margin: 25% auto;
-    position: absolute;
-    right: 0;
-    top: 0;
-}
+
 
 .logo {
     background-color: rgba(255, 255, 255, 0.7);
@@ -202,15 +181,15 @@ head {
 }
 .who button{
     list-style: outside none none;
-    position: absolute;
-    top:0%;
-    right: 0;
+   
+    top: 0px;
+    right: 0px;
     background-color: #f2f2f2; 
     border: none;
     font-size: 16px;
-    padding: 10px 25px;
 opacity: 0.70;
 background-color: transparent;
+width: 150px;
 }
 
 a:link { 
@@ -228,7 +207,7 @@ a:active {
   color: #333333;
 }
 
-.who button {
+/*.who button {
 	-moz-box-shadow: 0px 10px 14px -7px #3b3b3b;
 	-webkit-box-shadow: 0px 10px 14px -7px #3b3b3b;
 	box-shadow: 0px 10px 14px -7px #3b3b3b;
@@ -253,7 +232,7 @@ a:active {
 	padding:6px 12px;
 	text-decoration:none;
 	text-shadow:0px -50px 0px #737373;
-}
+}*/
 
 footer {
     padding: 1em;

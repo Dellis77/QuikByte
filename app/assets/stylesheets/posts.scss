@@ -1,4 +1,21 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.post-container h2 {
+	background-image: url("h1/h1bg.png")
 
+}
+
+.postblock {
+  width: 400px;
+  margin: 16px auto;
+  font-size: 16px;
+  
+}
+
+.post-container {
+  background: #e3e1df;
+  padding: 12px;
+  box-shadow: 2px 2px 5px #888888;
+
+}

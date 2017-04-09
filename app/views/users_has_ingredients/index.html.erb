@@ -5,20 +5,21 @@
 <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
 </header>
-<body>
+
 
 <h1><%= current_user.fname %>'s Ingredients</h1>
 
-<div class="ingblock">
-<div class="ing-container">
-<b>Choose from ingredients below to find matching recipes!</b>
 <table>
-  <thead>
-    <tr>
-      <%#<th>Ingredient</th>#%>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <tr>
+    <td>
+
+
+<div class="ing-container" >
+<b>Choose from ingredients below to find matching recipes!</b>
+
+
+<table>
+  
   <tbody>
 
   </div>
@@ -35,8 +36,11 @@
         <td><%= link_to 'Delete', users_has_ingredient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
+    </td>
+    
   <table>
         <%= submit_tag "Generate Recipe(s)" %>
+    <td>
   <thead>
   </form> 
     <tr>
@@ -49,9 +53,12 @@
 <h1>Results</h1>
 </div>
   </table>
- 
+ </td>
+</tr>
+</table>
 </div>
 </div>
 </div>
+
 </body>
 </HTML>

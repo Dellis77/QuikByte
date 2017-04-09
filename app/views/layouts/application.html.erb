@@ -37,32 +37,46 @@
 
   <li class="menuitem"><%= link_to "Home", root_path %>
   </li>
-<li class="menuitem"><%= link_to "About", root_path %>
-  </li>
 
-  <li class="menuitem"><%= link_to "New List", new_post_path %>
-  </li>
+
 
 <!--<li class="menuitem"><%= link_to "Edit User", edit_user_registration_path %>
   </li>-->
   
-  <li class="menuitem"><%= link_to "Recipes", recipes_path %>
-  </li>
-  
-  <li class="menuitem"><%= link_to "Ingredients", ingredients_path %>
-  </li>
   
   <li class="menuitem"><%= link_to "My Fridge", users_has_ingredients_path %>
   </li>
   
-  <li class="menuitem"><%= link_to "Rec Has", recipes_has_ingredients_path %>
+    <li class="menuitem"><%= link_to "Recipes", recipes_path %>
+  </li>
+
+  
+ <!-- <li class="menuitem"><%= link_to "Rec Has", recipes_has_ingredients_path %>
+  </li>-->
+  
+  <li class="menuitem"><%= link_to "About", root_path %>
   </li>
   
 </ul>
 
-<div class="who">
-  <button><%= link_to "Logout", destroy_user_session_path, :method => :delete %>
+<div class="who"><link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+
+<div class="w3-container">
+  <div class="w3-dropdown-hover w3-right">
+    <button class="w3-button w3-black"><%= current_user.fname %>'s Account</button>
+    <div class="w3-dropdown-content w3-bar-block w3-border" style="right:0">
+      <a href="/users/edit" class="w3-bar-item w3-button">Edit User</a>
+      <a href="/posts/new" class="w3-bar-item w3-button">New List</a>
+      <button><%= link_to "Logout", destroy_user_session_path, :method => :delete %>
 </button>
+      <!-- <a href="#" class="w3-bar-item w3-button"> <button><%= link_to "Logout", destroy_user_session_path, :method => :delete %>
+</button></a>-->
+    </div>
+  </div>
+</div>
+    
+ 
 </div>
 
 
