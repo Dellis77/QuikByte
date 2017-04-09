@@ -1,7 +1,21 @@
 <!Doctype HTML>
 <HTML>
 <header>
+<script type="text/javascript">
+$(function () {
+    $("#selectall").click(function () {
+        $('.someclass').prop('checked', this.checked);
+    });
 
+    $(".someclass").click(function () {
+        if ($(".someclass").length == $(".someclass:checked").length) {
+            $("#selectall").prop("checked", "checked");
+        } else {
+            $("#selectall").removeProp("checked");
+        }
+    });
+});
+</script>
 <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
 </header>
@@ -15,7 +29,7 @@
 
 
 <div class="ing-container" >
-<b>Choose from ingredients below to find matching recipes!</b>
+<h4><b>Choose from ingredients below to find matching recipes!</b></h4>
 
 
 <table>
@@ -23,12 +37,14 @@
   <tbody>
 
   </div>
+<h5><input type = "checkbox" id="selectall" class="someclass">    Select All</a></h5>
+
 <form >
     <% @users_has_ingredients.each do |users_has_ingredient| %>
       <tr>
         <td><%= users_has_ingredient.ingredient.name %></td>
         <td><%= image_tag(users_has_ingredient.ingredient.image, :width => '80', :height =>'80' ) %></td>
-        
+
         <td><%= check_box_tag 'ing_id[]', users_has_ingredient.ingredient_id, false,  {:class =>
 "someclass"} -%></td>
         
@@ -50,7 +66,6 @@
   </thead>
 
 <hr>
-<h1>Results</h1>
 </div>
   </table>
  </td>

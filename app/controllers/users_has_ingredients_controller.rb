@@ -12,8 +12,6 @@ class UsersHasIngredientsController < ApplicationController
     @ids = params[:ing_id]
     @ids = @ids.try(:split, ",")
     @gen = RecipesHasIngredient.where(:ingredient_id => @ids.to_a).group('recipe_id').order('count(recipe_id) DESC LIMIT 50')
-  
-
   end
 
   # GET /users_has_ingredients/1

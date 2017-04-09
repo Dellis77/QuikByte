@@ -1,6 +1,8 @@
 class UsersHasRecipesController < ApplicationController
   before_action :set_users_has_recipe, only: [:show, :edit, :update, :destroy]
 
+
+
   # GET /users_has_recipes
   # GET /users_has_recipes.json
   def index
