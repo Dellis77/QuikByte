@@ -35,7 +35,7 @@
 <ul class="topmenu">
 
 
-  <li class="menuitem"><%= link_to "Home", root_path %>
+  <li class="menuitem"><%= link_to "My Fridge", root_path %>
   </li>
 
 
@@ -44,7 +44,7 @@
   </li>-->
   
   
-  <li class="menuitem"><%= link_to "My Fridge", users_has_ingredients_path %>
+  <li class="menuitem"><%= link_to "Ingredients", ingredients_path %>
   </li>
   
     <li class="menuitem"><%= link_to "Recipes", recipes_path %>
@@ -92,7 +92,7 @@
 
 <div class="wut">
 <br>
-<h3>Hello, <%= current_user.fname %>! You're our favorite customer! </h3>
+
 </div>
 
     </div> <!-- banner div -->
@@ -100,8 +100,8 @@
 
 
 <div class="dapost">
-     <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
 <%= yield %>
 <footer>Copyright &copy; QuikByte
 <br>
@@ -176,7 +176,7 @@
      <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
   
-<table>
+<table class="tab1">
   <tr>
     <th><%= render "shared/login" %> </th>
     <th><hr/></th>

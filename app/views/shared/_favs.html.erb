@@ -1,0 +1,26 @@
+<style>
+  .favs{
+      width: 400px;
+  height: 400px;
+  overflow: auto;
+  margin: 16px auto;
+  font-size: 8px;
+  background: #b1d1b1;
+  padding: 12px;
+  box-shadow: 2px -2px 5px #888888;
+  overflow: scroll;
+  }
+  
+</style>
+
+
+
+<div class="favs">
+<h2>Favorite Recipes</h2>
+<% @favorite_video.each do |users_has_recipe| %>
+
+<iframe width="300" height="200" src="<%= users_has_recipe.recipe.videourl %>" frameborder="0" allowfullscreen></iframe>
+
+    <% end %>
+    
+</div>

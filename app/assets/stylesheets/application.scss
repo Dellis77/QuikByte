@@ -24,7 +24,6 @@
    text-align: center;
    width: 100%;
     top: 18%;
- 
     color: white;
     z-index: 1;
     font-size: 300%;
@@ -37,7 +36,6 @@
    text-align: center;
    width: 100%;
     top: 15%;
- 
     color: white;
     z-index: 1;
     font-size: 200%;
@@ -50,8 +48,6 @@
    text-align: center;
    width: 100%;
    top: 25%;
- 
-    
     z-index: 2;
    
     text-shadow: 50%;
@@ -59,14 +55,11 @@
 
 .con3 {
    
-   position: absolute;
-   text-align: center;
-   width: 100%;
-   top: 31%;
- 
-    
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    top: 31%;
     z-index: 1;
-    
     text-shadow: 50%;
 }
 
@@ -318,7 +311,7 @@ footer .socialitem ul, li{
    color: black;
 }
 
-table {
+table .tab1 {
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 20%;
@@ -326,7 +319,7 @@ table {
   margin-right: auto;
 }
 
-td, th {
+.tab1 td, th {
     border: none;
     text-align: center;
     padding: 8px;

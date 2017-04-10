@@ -1,3 +1,4 @@
+  <% if user_signed_in? %>
 <!Doctype HTML>
 <HTML>
 <header>
@@ -36,6 +37,7 @@
 <br>
 
 <%= link_to 'New Recipes Has Ingredient', new_recipes_has_ingredient_path %>
+<% end %>
 </div>
 </div>
 </div>

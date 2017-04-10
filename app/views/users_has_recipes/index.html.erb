@@ -12,9 +12,11 @@
     <% @users_has_recipes.each do |users_has_recipe| %>
       <tr>
         <td><%= users_has_recipe.recipe.name %></td>
+        <td><iframe width="380" height="200" src="<%= users_has_recipe.recipe.videourl %>" frameborder="0" allowfullscreen></iframe></td>
         <td><%= link_to 'Show', users_has_recipe %></td>
         <td><%= link_to 'Edit', edit_users_has_recipe_path(users_has_recipe) %></td>
         <td><%= link_to 'Destroy', users_has_recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        
       </tr>
     <% end %>
   </tbody>

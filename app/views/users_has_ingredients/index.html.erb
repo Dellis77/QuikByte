@@ -16,27 +16,28 @@ $(function () {
     });
 });
 </script>
-<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
 
 </header>
+ <%= image_tag("Av/Avatar.png", width: '200px') %>
 
-
-<h1><%= current_user.fname %>'s Ingredients</h1>
-
-<table>
-  <tr>
-    <td>
-
+<h1>Hello, <%= current_user.fname %>! You're our favorite customer!</h1>
 
 <div class="ing-container" >
+
+<!--Super table start   -->  
+
+
+<table> 
+<tr>
+  <th>
+    <div class="ing-container1" >
 <h4><b>Choose from ingredients below to find matching recipes!</b></h4>
 
 
 <table>
-  
   <tbody>
 
-  </div>
 <h5><input type = "checkbox" id="selectall" class="someclass">    Select All</a></h5>
 
 <form >
@@ -52,28 +53,50 @@ $(function () {
         <td><%= link_to 'Delete', users_has_ingredient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
-    </td>
-    
-  <table>
-        <%= submit_tag "Generate Recipe(s)" %>
-    <td>
-  <thead>
-  </form> 
-    <tr>
-      <th> <%= render "shared/gen" %></th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-<hr>
-</div>
-  </table>
- </td>
-</tr>
+ <%= submit_tag "Generate Recipe(s)" %>
+
+  </form>
+  </div>
+  </tbody>
 </table>
-</div>
-</div>
-</div>
+</th>
 
+<th>
+    <%= render "shared/gen" %>
+ </th>
+ 
+ <th>
+<!-- video table start   -->   
+    <table>
+      <thead>
+    </thead>
+        <tr>
+      <td><%= render "shared/favs" %></td>
+    </tr>
+    <thead>
+    <tr>
+      <th><h2>Most Popular Recipes</h2></th>
+    </tr>
+    </thead>
+        <tr>
+      <td><%= render "shared/top_five" %></td>
+    </tr>
+     <thead>
+    <tr>
+      <th><h2>Quik Recipes</h2></th>
+    </tr>
+    </thead>
+    <tr>
+    
+      <td><%= render "shared/quik_recipe" %></td>
+    </tr>
+</table>
+<!-- table end  --> 
+
+</th>
+</tr>
+</table> 
+</div>
 </body>
 </HTML>

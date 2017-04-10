@@ -1,14 +1,26 @@
-<table>
+<style>
+  .gen{
+      width: 1000px;
+  height: 600px;
+  overflow: auto;
+  margin: 16px auto;
+  font-size: 8px;
+  background: #b1d1b1;
+  padding: 12px;
+  box-shadow: 2px -2px 5px #888888;
+  overflow: scroll;
+  }
+  
+</style>
 
-  <thead>
-    <tr>
-      <h1>Results</h1>
-      <th></th>
-    </tr>
-  </thead>
+
+<div class="gen" >
+
+<table>
+<h1>Results</h1>
 
   <tbody>
-    <% @gen.each_with_index do |recipes_has_ingredient, index| %>
+    <% @gen.each do |recipes_has_ingredient| %>
       <tr>
         <td><h3><%= recipes_has_ingredient.recipe.name %></h3></td>
        
@@ -19,7 +31,7 @@
     <% end %>
   </tbody>
 </table>
-</div>
-</div>
 
 <br>
+
+</div>

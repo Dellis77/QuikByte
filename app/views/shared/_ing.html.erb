@@ -1,20 +1,39 @@
-<!Doctype HTML>
-<HTML>
-<header>
-
-<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-
-</header>
-<body>
-  <% if user_signed_in? %>
-
+<doctype! html5>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login page</title>
+  
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    
  
+    
+</head>
+<body>
+
+
+<button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Sign Up!</button>
+
+<div id="id02" class="modal">
+  
+  <div class="modal-content animate" >
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <h3>Sign up, it's free!</h3>
+    </div>
+
+    <% if user_signed_in? %>
+  
+<table class="ult">
+    <tr>
+     
+  <th>  
   <div class="ingblock">
 <div class="search">
 
 <h1>Ingredients</h1>
 
-    <%= search_form_for @q do |f| %>
+    <%= search @q do |f| %>
     <table class="tabs">
       <tr>
         <td><%= f.label :name_cont, "Search For Ingredients" %></td>
@@ -78,13 +97,29 @@
 <%= link_to 'New Ingredient', new_ingredient_path %>
 <% end %>
 
-
-
-
-
-
+                
+      <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+  </div>
 </div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('id02');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+                
+            </div>
+        </div>
+        </div>
+        </div>
 </div>
-</div>
+
+
 </body>
-</HTML>
+</html>
