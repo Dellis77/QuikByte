@@ -1,7 +1,7 @@
-<!Doctype HTML>
-<HTML>
-<header>
-<script type="text/javascript">
+<!DOCTYPE html>
+<html>
+<head>
+  <script type="text/javascript">
 $(function () {
     $("#selectall").click(function () {
         $('.someclass').prop('checked', this.checked);
@@ -17,60 +17,156 @@ $(function () {
 });
 </script>
 
+<style>
+body {
+	text-align: center;				/* This is a hack for older browsers to center the page */
+z-index: 0;
+  
+}
 
-</header>
- <%= image_tag("Av/Avatar.png", width: '200px') %>
+#container {
+	margin: 0 auto; 				/* This centers the page in modern browsers */
+	text-align: center; 				/* This is a hack for older browsers to center the page */
+	width: 80%; 					/* This sets our total page width */
+    height: 100%;
+  z-index: 0;
+    
+    
+}
+
+
+#header {
+	width: 100%;/* This sets the header to stretch the full page width */
+  background-color: gray;
+	text-align: center;
+}
+
+#navigation li {
+	display: inline; 				/* Make our navigation display in a line */
+}
+
+#content {
+	float: left;					/* This causes the content to move to the left */
+	width: 700px;
+	font-size: 8px;
+  background: #b1d1b1;
+  padding: 12px;
+  box-shadow: 2px -2px 5px #888888; /* We need to set the width whenever we float an element */
+  text-align: center;
+  
+}
+
+#sidebar-left {
+	float: left; 					/* This causes the sidebar to move to the left
+										It's going to appear to the left of the content because 
+										we declared it first in our HTML page */
+	width: 400px; 					/* We need to set the width whenever we float an element */
+  text-align: center;
+  box-shadow: 2px -2px 5px #888888;
+  background:  #b1d1b1;
+  
+}
+
+
+
+#sidebar-right {
+	float: right; 					/* This causes the sidebar to move to the right */
+	width: 420px; 					/* We need to set the width whenever we float an element */
+}
+
+
+#footer {
+	clear: both; 					/* This makes sure that the footer clears both the sidebar and content floats */
+	width: 100%px;					/* This sets the header to stretch the full page width */
+}
+
+
+</style>
+</head>
+<body>
+
+<%= image_tag("Av/Avatar.png", width: '200px') %>
 
 <h1>Hello, <%= current_user.fname %>! You're our favorite customer!</h1>
 
-<div class="ing-container" >
 
-<!--Super table start   -->  
+<div id="container">
+		
+		<div id="header">
+
+		</div>
+		
+		
+<div id="sidebar-left">
 
 
-<table> 
-<tr>
-  <th>
+    <h4><b>Choose from ingredients below to find matching recipes!</b></h4>
+    
+<h5><input type = "checkbox" id="selectall" class="someclass">    Select All</a></h5> 
+
+
+
+    <form >
+          
+     <%= submit_tag "Generate Recipe(s)" %>
     <div class="ing-container1" >
-<h4><b>Choose from ingredients below to find matching recipes!</b></h4>
+          
+
+    
+
+        <% @users_has_ingredients.each do |users_has_ingredient| %>
+        <table>
+          <tr>
+            
+            <td>
+                <table class = "ingt">
+                    <tr>
+                        <th><%= users_has_ingredient.ingredient.name %></th>
+                        </tr>
+                        <tr>
+                            <td><%= image_tag(users_has_ingredient.ingredient.image, :width => '80', :height =>'80' ) %></td>
+                            </tr>
+                            <tr>
+                                <td><%= link_to 'Delete', users_has_ingredient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                                </tr>
+                                </table>
+                                </td>
+                                <td>
+                <table class = "ingt2">
+                    <tr>   
+                        <th><%= check_box_tag 'ing_id[]', users_has_ingredient.ingredient_id, false,  {:class => "someclass"} -%></th>
+                    </tr>
+                    <tr>
+                        <td>Select</td>
+                    </tr>
+                    </tr>
+                </table>
+          </td>
+          <br>
+        <% end %>
+    
+      </form>
+    
+
+    </table>
+    </div>
+</div>
 
 
-<table>
-  <tbody>
+<div id="content">
 
-<h5><input type = "checkbox" id="selectall" class="someclass">    Select All</a></h5>
-
-<form >
-    <% @users_has_ingredients.each do |users_has_ingredient| %>
-      <tr>
-        <td><%= users_has_ingredient.ingredient.name %></td>
-        <td><table><tr><td><%= image_tag(users_has_ingredient.ingredient.image, :width => '80', :height =>'80' ) %></td></tr><tr><td><%= link_to 'Delete', users_has_ingredient, method: :delete, data: { confirm: 'Are you sure?' } %></td></tr></table></td>
-
-        <td><%= check_box_tag 'ing_id[]', users_has_ingredient.ingredient_id, false,  {:class =>
-"someclass"} -%></td>
-        
-        
-        <td>Select</td>
-      </tr>
-    <% end %>
-
- <%= submit_tag "Generate Recipe(s)" %>
-
-  </form>
-  </div>
-  </tbody>
-</table>
-</th>
-
-<th>
-    <%= render "shared/gen" %>
- </th>
  
- <th>
-<!-- video table start   -->   
-    <table>
-      <thead>
+	 <%= render "shared/gen" %>
+</div>
 
+<div id="sidebar-right">
+    <div class="ing-container2" >
+
+    <table class ="vids">
+      <thead>
+        <tr>
+            <th><h2>Favorite Recipes</h2></th>
+        </tr>
     </thead>
         <tr>
       <td><%= render "shared/favs" %></td>
@@ -92,12 +188,14 @@ $(function () {
     
       <td><%= render "shared/quik_recipe" %></td>
     </tr>
-</table>
-<!-- table end  --> 
-
-</th>
-</tr>
-</table> 
+    </table>
+    </div>
 </div>
+</div>
+</div>	
+<div id="footer">
+		</div>
 </body>
-</HTML>
+
+
+</html>

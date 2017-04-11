@@ -1,10 +1,15 @@
 <div class="ingblock1">
 
+
+    <div class="centered">
+    <% @top_five.each_with_index do |recipe, index| %>
 <table>
 
   <tbody>
-    <div class="centered">
-    <% @top_five.each_with_index do |recipe, index| %>
+      <tr>
+        <th></th>
+        <th><h3><%= recipe.name %></h3></th>
+      </tr>
       <tr>
         <td><h3>#<%= index + 1 %></h3></td>
         <td><iframe width="300" height="200" src="<%= recipe.videourl %>" frameborder="0" allowfullscreen></iframe></td>

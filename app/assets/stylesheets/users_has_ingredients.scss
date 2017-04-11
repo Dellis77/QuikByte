@@ -7,11 +7,22 @@
 }
 
 .ing-container1 {
-    
-    background:  #b1d1b1;
+ 
     padding: 8px;
     width: 100%;
+    height: 1000px;
+    
+    overflow: scroll;
+}
+
+.ing-container2 {
+    
+    background: #b1d1b1;
+    padding: 8px;
+    width: 100%;
+    height: 100%;
     box-shadow: 2px -2px 5px #888888;
+   
 }
 
 .someclass{
@@ -27,27 +38,53 @@ font-size: 13px; line-height:18px;
  text-align: center;
 
 }
-.ing-container td{
-    border: none;
-    padding: 8px;
-}
 
-.ing-container1 input[type="submit"] {
+
+input[type="submit"] {
   background: #52855d;
   border-color: transparent;
   color: #ffffff;
   cursor: pointer;
-  width: 150px;
+  width: 100%;
   height: 50px ;
 
 }
 
 
 
-.ing-container1 input[type="submit"]:hover {
+input[type="submit"]:hover {
+  background: #63a163;
+}
+
+.ing-container1 a {
+  background: #52855d;
+  border-color: transparent;
+  color: #ffffff;
+  cursor: pointer;
+  width: 100%;
+  height: 50px ;
+
+}
+
+.ing-container1 a :hover {
   background: #63a163;
 }
 th {
    
     vertical-align: top;
 }
+
+
+.ingt td {
+   border: 1px solid black;
+   padding: 8px;
+   
+}
+
+.ingt th {
+    border: 1px solid black;
+    background-color: #4CAF50;
+    color: white;
+}
+
+
