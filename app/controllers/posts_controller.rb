@@ -28,7 +28,8 @@ class PostsController < ApplicationController
 
     redirect_to @post, notice: 'This is a Reminder that you created a shopping list with QuikByte app visit us to view your list.'
 @user = current_user
-PostMailer.post_created(@user).deliver_later(wait_until: 10.hours.from_now)
+PostMailer.post_created(@user).deliver
+#_later(wait_until: 10.hours.from_now) add this to PostMailer to send 10 hrs from post made.
 
   
   else
@@ -55,7 +56,7 @@ end
 
 def destroy
   @post.destroy
-  redirect_to root_path
+  redirect_to posts_path
 end
 
 # private

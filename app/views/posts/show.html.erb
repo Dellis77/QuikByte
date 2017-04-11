@@ -1,6 +1,7 @@
 
   <!-- sidebar content specific to this page -->
-
+ <div class="login2">
+<div class="login-container2">
 
 <h2><%= @post.title %></h2>
 
@@ -9,9 +10,13 @@
 </div>
 <br>
 <% if user_signed_in? %>
-<button class="button"><%= link_to "Edit Post", edit_post_path(@post) %></button>
-
-<button class="button"><%= link_to "Delete", post_path(@post), method: :delete, data: { confirm: "Are You Sure?" } %></button>
+<%= button_to "Edit Post", edit_post_path(@post),{:method => :get} %>
+<br>
+<%= button_to "Delete", post_path(@post), method: :delete, data: { confirm: "Are You Sure?" } %>
+<br>
 
 <% end %>
+<%= button_to "Back", posts_path, {:method => :get} %>
+</div>
+</div>
 

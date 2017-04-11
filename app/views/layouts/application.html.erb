@@ -51,6 +51,9 @@
  <!-- <li class="menuitem"><%= link_to "Rec Has", recipes_has_ingredients_path %>
   </li>-->
   
+  <li class="menuitem"><%= link_to "Shopping List", posts_path %>
+  </li>
+  
   <li class="menuitem"><%= link_to "About", root_path %>
   </li>
   
@@ -98,8 +101,8 @@
 <br>
 <br>
 <div class="dapost">
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+  <h3 class="notice"><%= notice %></h3>
+  <h3 class="alert"><%= alert %></h3>
 <%= yield %>
 <footer>Copyright &copy; QuikByte
 <br>
@@ -144,7 +147,7 @@
 
 <div class="banner">
 
-<div class="container" >
+
 <header>
 <div class="wrapper">
 
@@ -171,7 +174,7 @@
 </div>
 
     </div> <!-- banner div -->
-
+<div class="welcome">
 
      <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
@@ -190,7 +193,7 @@
 <br/>
 <br/>
 
-    
+ </div>   
 
 
 
