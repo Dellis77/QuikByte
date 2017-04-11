@@ -67,6 +67,7 @@
     <button class="w3-button w3-black"><%= current_user.fname %>'s Account</button>
     <div class="w3-dropdown-content w3-bar-block w3-border" style="right:0">
       <a href="/users/edit" class="w3-bar-item w3-button">Edit User</a>
+      <a href="/users_has_recipes" class="w3-bar-item w3-button">Manage Favorite Vids</a>
       <a href="/posts/new" class="w3-bar-item w3-button">New List</a>
       <button><%= link_to "Logout", destroy_user_session_path, :method => :delete %>
 </button>
@@ -176,8 +177,8 @@
     </div> <!-- banner div -->
 <div class="welcome">
 
-     <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+     <h3 class="notice"><%= notice %></h3>
+    <h3 class="alert"><%= alert %></h3>
   
 <table class="tab1">
   <tr>

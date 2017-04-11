@@ -6,32 +6,53 @@
   overflow: auto;
   }
   
+  
+.gen td {
+   border: 1px solid#5a5b5a;
+   padding: 8px;
+   
+}
+
+.gen th {
+    border: 1px solid #5a5b5a;
+    background-color: #52855d;
+    color: white;
+}
+
+  
 </style>
 
 
 <div class="gen" >
 
-<table>
- <thead>
-   <tr>
-     <th>  <h1>Results</h1></th>
-   </tr>
- </thead>
 
-  <tbody>
+
     <% @gen.each do |recipes_has_ingredient| %>
-    
+    <table>
+  <thead>
+    <tr>
+      
+      <th><h3><%= recipes_has_ingredient.recipe.name %></h3></th>
+      
+    </tr>
+  </thead>
+<tbody>
       <tr>
-        <td><h3><%= recipes_has_ingredient.recipe.name %></h3></td>
        
-                <td><iframe width="350" height="200" src="<%= recipes_has_ingredient.recipe.videourl %>" frameborder="0" allowfullscreen></iframe></td>
-
+        <td><iframe width="380" height="200" src="<%= recipes_has_ingredient.recipe.videourl %>" frameborder="0" allowfullscreen>" frameborder="0" allowfullscreen></iframe></td>
+       <tr>
         <td><%= button_to 'Favorite', {:controller => "users_has_recipes", :action => "create", :recipe_id => recipes_has_ingredient.recipe.id} , {:method => :post}  %></td>
+        </tr>
       </tr>
-    <% end %>
-  </tbody>
+        </tbody>
 </table>
-
 <br>
+<br>
+    <% end %>
+
 
 </div>
+<br>
+
+
+

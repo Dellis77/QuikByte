@@ -1,3 +1,26 @@
 // Place all the styles related to the UsersHasRecipes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.favVids {
+  width: 600px;
+  height: 100%;
+  overflow: auto;
+  margin: 16px auto;
+  font-size: 15px;
+  background: #e3e1df;
+  padding: 12px;
+  box-shadow: 2px -2px 5px #888888;
+  background-color: #b1d1b1;
+}
+
+.favVids td {
+   border: 1px solid#5a5b5a;
+   padding: 8px;
+   
+}
+
+.favVids th {
+    border: 1px solid #5a5b5a;
+    background-color: #52855d;
+    color: white;
+}
