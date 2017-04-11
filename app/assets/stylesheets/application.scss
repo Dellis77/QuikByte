@@ -239,42 +239,16 @@ footer {
     left: 0px;
 }
 
-footer.socialitem a{
-    color: white;
-    font-weight: bold;
-    text-decoration: none;
-    background-color: transparent;
-    text-align: center;
+footer .social td{
+
+    padding: 8px;
 }
 
-footer.social {
-    top:22px;
 
-    text-align: center;
-}
-footer .socialitem  {
-    border: 1px solid;
-
-    display: inline-block;
-    font-size: 20px;
-color: white;
-    text-align: center;
-    width: 28px;
-    height: 28px;
+footer .socialitem a:hover { 
+  opacity: 0.5;
 }
 
-footer a:visited {
-    color: white;
-}
-
-footer .socialitem li a:hover { 
-  color:  #00cc7a;
-}
-footer .socialitem ul, li{ 
-   text-align: center;
-
-   color: white;
-}
 
 .welcome {
    background: #e3e1df;
@@ -301,7 +275,6 @@ footer .socialitem ul, li{
 .fooditem  {
 
     display: inline-block;
-
     padding: 50px;
     text-align: center;
 
