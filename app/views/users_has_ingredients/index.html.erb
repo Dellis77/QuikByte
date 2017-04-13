@@ -25,18 +25,16 @@ z-index: 0;
   
 }
 
-#container {
+.container {
 	margin: 0 auto; 				/* This centers the page in modern browsers */
 	text-align: center; 				/* This is a hack for older browsers to center the page */
 	width: 80%; 					/* This sets our total page width */
     height: 100%;
   z-index: 0;
+  box-shadow:  0px -2px 10px #888888;
+  background:  #b1d1b1;
   
     
-}
-
-.container {
-
 }
 
 
@@ -52,11 +50,10 @@ z-index: 0;
 
 #content {
 	float: left;					/* This causes the content to move to the left */
-	width: 700px;
+	width: 600px;
 	font-size: 8px;
-  background: #b1d1b1;
   padding: 12px;
-  box-shadow: 0px -2px 5px #888888; /* We need to set the width whenever we float an element */
+                                     /* We need to set the width whenever we float an element */
   text-align: center;
   
 }
@@ -64,11 +61,11 @@ z-index: 0;
 #sidebar-left {
 	float: left; 					/* This causes the sidebar to move to the left
 										It's going to appear to the left of the content because 
-										we declared it first in our HTML page */
+									/*	we declared it first in our HTML page */
 	width: 400px; 					/* We need to set the width whenever we float an element */
   text-align: center;
-  box-shadow: -2px -2px 5px #888888;
-  background:  #b1d1b1;
+/*  box-shadow: -2px -2px 5px #888888;
+  background:  #b1d1b1;*/
   
 }
 
@@ -85,6 +82,31 @@ z-index: 0;
 	width: 100%px;					/* This sets the header to stretch the full page width */
 }
 
+button.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
+
+button.accordion.active, button.accordion:hover {
+    background-color: #ddd;
+}
+
+div.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
 
 </style>
 </head>
@@ -94,8 +116,11 @@ z-index: 0;
 
 <h1>Hello, <%= current_user.fname %>! You're our favorite customer!</h1>
 
+<% if current_user.sign_in_count == 0 %>
+<% flash[:notice] = "Post successfully created" %>
+<% end %>
 
-<div id="container">
+<div class="container">
 		
 		<div id="header">
 
@@ -159,47 +184,52 @@ z-index: 0;
 
 
 <div id="content">
-<h2>Results</h2>
+<h2>Recipe Generator</h2>
  
 	 <%= render "shared/gen" %>
 </div>
 
 <div id="sidebar-right">
     <div class="ing-container2" >
+<button class="accordion">My Favorite Recipes</button>
+<div class="panel">
+    <%= render "shared/favs" %>
+</div>
 
-    <table class ="vids">
-      <thead>
-        <tr>
-            <th><h2>Favorite Recipes</h2></th>
-        </tr>
-    </thead>
-        <tr>
-      <td><%= render "shared/favs" %></td>
-    </tr>
-    <thead>
-    <tr>
-      <th><h2>Most Popular Recipes</h2></th>
-    </tr>
-    </thead>
-        <tr>
-      <td><%= render "shared/top_five" %></td>
-    </tr>
-     <thead>
-    <tr>
-      <th><h2>Quik Recipes</h2></th>
-    </tr>
-    </thead>
-    <tr>
+<button class="accordion">Most Popular Recipes</button>
+<div class="panel">
+ 
+ <%= render "shared/top_five" %>
+</div>
+
+<button class="accordion">Quik Recipes</button>
+<div class="panel">
     
-      <td><%= render "shared/quik_recipe" %></td>
-    </tr>
-    </table>
-    </div>
+    <%= render "shared/quik_recipe" %>
+</div>
+
 </div>
 </div>
 </div>	
 <div id="footer">
 		</div>
+		
+	<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].onclick = function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight){
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  }
+}
+</script>
 </body>
 
 
