@@ -1,21 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <script type="text/javascript">
-$(function () {
-    $("#selectall").click(function () {
-        $('.someclass').prop('checked', this.checked);
-    });
-
-    $(".someclass").click(function () {
-        if ($(".someclass").length == $(".someclass:checked").length) {
-            $("#selectall").prop("checked", "checked");
-        } else {
-            $("#selectall").removeProp("checked");
-        }
-    });
-});
-</script>
+  
 
 <style>
 body {
@@ -109,6 +95,27 @@ div.panel {
 
 
 </style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
+
+
+
+  <script type="text/javascript">
+$(function () {
+    $("#selectall").click(function () {
+        $('.someclass').prop('checked', this.checked);
+    });
+
+    $(".someclass").click(function () {
+        if ($(".someclass").length == $(".someclass:checked").length) {
+            $("#selectall").prop("checked", "checked");
+        } else {
+            $("#selectall").removeProp("checked");
+        }
+    });
+});
+</script>
+
 </head>
 <body>
 
@@ -145,7 +152,7 @@ div.panel {
     
 
         <% @users_has_ingredients.each do |users_has_ingredient| %>
-        <table>
+        <table class="ingt1">
           <tr>
             
             <td>
@@ -154,22 +161,29 @@ div.panel {
                         <th><%= users_has_ingredient.ingredient.name %></th>
                         </tr>
                         <tr>
-                            <td><%= image_tag(users_has_ingredient.ingredient.image, :width => '80', :height =>'80' ) %></td>
+                            <td><%= link_to 'Delete', users_has_ingredient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                            
                             </tr>
-                            <tr>
-                                <td><%= link_to 'Delete', users_has_ingredient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-                                </tr>
+                           
                                 </table>
                                 </td>
                                 <td>
                 <table class = "ingt2">
                     <tr>   
-                        <th><%= check_box_tag 'ing_id[]', users_has_ingredient.ingredient_id, false,  {:class => "someclass"} -%></th>
+                        
+                        <th>
+
+                            <label>
+                            <%= image_tag(users_has_ingredient.ingredient.image, :width => '80', :height =>'80' ) %>
+                            <%= check_box_tag 'ing_id[]', users_has_ingredient.ingredient_id, false,  {:class => "someclass"} -%>
+                            </label>
+                            
+                        </th>
                     </tr>
-                    <tr>
-                        <td>Select</td>
                     </tr>
-                    </tr>
+                    
+
+                    
                 </table>
           </td>
           <br>
@@ -177,7 +191,7 @@ div.panel {
     
       </form>
     
-
+</tr>
     </table>
     </div>
 </div>
@@ -230,6 +244,7 @@ for (i = 0; i < acc.length; i++) {
   }
 }
 </script>
+
 </body>
 
 

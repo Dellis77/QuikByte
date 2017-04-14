@@ -5,7 +5,7 @@
   padding: 8px;
   width: 100%;
   height: 1000px;
-  overflow: scroll; }
+  overflow: auto; }
 
 .ing-container2 {
   padding: 8px;
@@ -17,8 +17,7 @@
   cursor: pointer;
   font-size: 13px;
   line-height: 18px;
-  width: 25px;
-  height: 25px;
+
   vertical-align: middle;
   background-color: black;
   color: #f3f3f3;
@@ -50,12 +49,21 @@ th {
   vertical-align: top; }
 
 .ingt td {
-  border: 1px solid #5a5b5a;
   padding: 8px; }
 
 .ingt th {
   border: 1px solid #5a5b5a;
   background-color: #52855d;
   color: white; }
+
+.ingt1 td {
+  border: 1px solid #5a5b5a;
+  padding: 8px; }
+
+.ingt1 th {
+ 
+vertical-align: middle;
+ }  
+
 
 /*# sourceMappingURL=users_has_ingredients.css.map */
