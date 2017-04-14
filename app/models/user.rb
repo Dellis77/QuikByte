@@ -7,8 +7,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
   
   has_many :posts
-
-  has_many :favorites
-  has_many :favorite_ingredients, through: :favorites, source: :favorited, source_type: 'Ingredient'
-
+  has_many :recipes, dependent: :destroy, foreign_key: :user_id
+  has_many :users_has_recipes, foreign_key: :user_id, dependent: :destroy
+	has_many :recipes, through: :users_has_recipes
+  
 end

@@ -60,7 +60,7 @@ class UsersHasRecipesController < ApplicationController
   def destroy
     @users_has_recipe.destroy
     respond_to do |format|
-      format.html { redirect_to users_has_recipes_url, notice: 'Users has recipe was successfully destroyed.' }
+      format.html { redirect_to users_has_recipes_url, notice: 'Recipe was successfully deleted.' }
       format.json { head :no_content }
     end
   end
