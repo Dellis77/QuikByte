@@ -2,7 +2,6 @@ class Recipe < ApplicationRecord
 	
 	def self.search(search)
       where("id LIKE ?", "%#{search}%") 
-     
 	end
 	
 	

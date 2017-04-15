@@ -12,9 +12,9 @@ class UsersHasIngredientsController < ApplicationController
     @ids = params[:ing_id]
     @ids = @ids.try(:split, ",")
     @gen = RecipesHasIngredient.where(:ingredient_id => @ids.to_a).group('recipe_id').order('count(recipe_id) DESC LIMIT 50')
-  @top_five = Recipe.joins(:users_has_recipes).group("recipe_id").order("count(recipe_id) DESC LIMIT 5")
-  @favorite_video = UsersHasRecipe.joins(:recipe, :user).where(:user_id => current_user.id).order("name")
-  @quik_recipes = Recipe.select("(preptime + cooktime) as totaltime, name, videourl").order("totaltime LIMIT 5")
+    @top_five = Recipe.joins(:users_has_recipes).group("recipe_id").order("count(recipe_id) DESC LIMIT 5")
+    @favorite_video = UsersHasRecipe.joins(:recipe, :user).where(:user_id => current_user.id).order("name")
+    @quik_recipes = Recipe.select("(preptime + cooktime) as totaltime, name, videourl").order("totaltime LIMIT 5")
 User.order('name DESC')
   end
 
