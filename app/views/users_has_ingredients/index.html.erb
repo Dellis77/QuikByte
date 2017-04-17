@@ -36,19 +36,20 @@ z-index: 0;
 
 #content {
 	float: left;					/* This causes the content to move to the left */
-	width: 600px;
+	width: 55%;
 	font-size: 8px;
   padding: 12px;
-                                     /* We need to set the width whenever we float an element */
+    background-color: #cfedcf;                                 /* We need to set the width whenever we float an element */
   text-align: center;
   
 }
 
 #sidebar-left {
-	float: left; 					/* This causes the sidebar to move to the left
-										It's going to appear to the left of the content because 
-									/*	we declared it first in our HTML page */
-	width: 400px; 					/* We need to set the width whenever we float an element */
+    padding: 45px;
+	float: left; 					
+						
+									
+	width: 320px; 					
   text-align: center;
 /*  box-shadow: -2px -2px 5px #888888;
   background:  #b1d1b1;*/
@@ -59,7 +60,7 @@ z-index: 0;
 
 #sidebar-right {
 	float: right; 					/* This causes the sidebar to move to the right */
-	width: 420px; 					/* We need to set the width whenever we float an element */
+	width: 350px; 					/* We need to set the width whenever we float an element */
 }
 
 
@@ -119,7 +120,7 @@ $(function () {
 </head>
 <body>
 
-<%= image_tag("Av/Avatar.png", width: '150px') %>
+
 
 <h1>Hello, <%= current_user.fname %>! You're our favorite customer!</h1>
 
@@ -161,7 +162,7 @@ $(function () {
                         <th><%= users_has_ingredient.ingredient.name %></th>
                         </tr>
                         <tr>
-                            <td><%= link_to 'Delete', users_has_ingredient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                            <td><%= button_to 'Delete', users_has_ingredient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
                             
                             </tr>
                            
@@ -204,6 +205,7 @@ $(function () {
 </div>
 
 <div id="sidebar-right">
+    <%= image_tag("Av/timeToCook.png", width: '250px') %>
     <div class="ing-container2" >
 <button class="accordion">My Favorite Recipes</button>
 <div class="panel">

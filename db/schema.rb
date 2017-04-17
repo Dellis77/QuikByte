@@ -18,6 +18,13 @@ ActiveRecord::Schema.define(version: 20170415214126) do
     t.string "image",       limit: 45
   end
 
+  create_table "ingredients_users", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "ingredient_id"
+    t.integer "user_id"
+    t.index ["ingredient_id"], name: "index_ingredients_users_on_ingredient_id", using: :btree
+    t.index ["user_id"], name: "index_ingredients_users_on_user_id", using: :btree
+  end
+
   create_table "posts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "title"
     t.text     "body",       limit: 65535
@@ -84,4 +91,6 @@ ActiveRecord::Schema.define(version: 20170415214126) do
 
   add_foreign_key "recipes_has_ingredients", "ingredients", name: "fk_recipes_has_ingredients_ingredients1"
   add_foreign_key "recipes_has_ingredients", "recipes", name: "fk_recipes_has_ingredients_recipes1"
+  add_foreign_key "users_has_ingredients", "ingredients", name: "fk_users_has_ingredients_ingredients1"
+  add_foreign_key "users_has_ingredients", "users", name: "fk_users_has_ingredients_users1"
 end

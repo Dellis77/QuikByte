@@ -70,7 +70,7 @@ User.order('name DESC')
   def destroy
     @users_has_ingredient.destroy
     respond_to do |format|
-      format.html { redirect_to users_has_ingredients_url, notice: 'Users has ingredient was successfully destroyed.' }
+      format.html { redirect_to users_has_ingredients_url, notice: 'Users has ingredient was successfully deleted.' }
       format.json { head :no_content }
     end
   end

@@ -48,17 +48,12 @@ input[type="submit"]:hover {
 th {
   vertical-align: top; }
 
-.ingt td {
-  padding: 8px; }
 
 .ingt th {
-  border: 1px solid #5a5b5a;
+ /* border: 1px solid #5a5b5a;*/
   background-color: #52855d;
   color: white; }
 
-.ingt1 td {
-  border: 1px solid #5a5b5a;
-  padding: 8px; }
 
 .ingt1 th {
  
