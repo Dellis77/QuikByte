@@ -11,7 +11,7 @@
   <tbody>
     <% @quik_recipes.each do |recipe| %>
       <tr>
-        <td><h3><%= recipe.name %></h3></td>
+        <td><h3><%= recipe.name %> <%= recipe.totaltime %> min</h3></td>
       </tr>
       
         <thead>
@@ -21,7 +21,6 @@
     </tr>
   </thead>
       <tr>
-        <td><h3><%= recipe.totaltime %> minutes</h3></td>
         <td></td>
       </tr>
     <% end %>
