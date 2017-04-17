@@ -58,19 +58,19 @@ function myFunction() {
     <li class="menuitem"><%= link_to "Recipes", recipes_path %>
   </li>
 
-  
  <!-- <li class="menuitem"><%= link_to "Rec Has", recipes_has_ingredients_path %>
   </li>-->
   
   <li class="menuitem"><%= link_to "Shopping List", posts_path %>
   </li>
-  
+
   <li class="menuitem"><%= link_to "About", root_path %>
   </li>
   
 </ul>
 
 <div class="who">
+  
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 
@@ -116,8 +116,22 @@ function myFunction() {
 <div class="dapost">
   <h3 class="notice"><%= notice %></h3>
   <h3 class="alert"><%= alert %></h3>
+
 <%= yield %>
-<footer>Copyright &copy; QuikByte
+
+<footer>
+<%="You have been logged in for #{time_ago_in_words(current_user.current_sign_in_at)}"%>
+<br>
+<%="Last sign in was #{time_ago_in_words(current_user.last_sign_in_at)} ago"%>
+<br>
+<% if (current_user.sign_in_count) > 50 %>
+<%="You're a regular! #{(current_user.sign_in_count)} QuikByte visits and counting..."%>
+<% else %>
+<%="You have visited QuikByte a total of #{(current_user.sign_in_count)} times"%>
+<% end %>
+<br>
+<br>
+  Copyright &copy; QuikByte
 <br>
 
 <h4>Find Us On Social Media!</h4>
