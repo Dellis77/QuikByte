@@ -51,8 +51,10 @@ th {
 
 .ingt th {
  /* border: 1px solid #5a5b5a;*/
-  background-color: #52855d;
-  color: white; }
+  background-color: #eeeeee;
+  color: black; 
+  font-size: 1.4em;
+}
 
 
 .ingt1 th {

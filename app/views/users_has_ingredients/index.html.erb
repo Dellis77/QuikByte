@@ -70,6 +70,16 @@ z-index: 0;
 	width: 100%px;					/* This sets the header to stretch the full page width */
 }
 
+
+#lab:hover{
+    cursor: pointer;
+    opacity: 0.8;
+}
+#lab:active{
+    opacity: 0.5;
+}
+
+
 button.accordion {
     background-color: #eee;
     color: #444;
@@ -79,7 +89,7 @@ button.accordion {
     border: none;
     text-align: center;
     outline: none;
-    font-size: 15px;
+      font-size: 1.4em;
     transition: 0.4s;
 }
 
@@ -93,6 +103,7 @@ div.panel {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
+    
 }
 
 
@@ -175,7 +186,7 @@ $(function () {
                         
                         <th>
 
-                            <label>
+                            <label id="lab">
                             <%= image_tag(users_has_ingredient.ingredient.image, :width => '80', :height =>'80' ) %>
                             <%= check_box_tag 'ing_id[]', users_has_ingredient.ingredient_id, false,  {:class => "someclass"} -%>
                             </label>
