@@ -32,8 +32,8 @@ class UsersHasRecipesController < ApplicationController
     
     respond_to do |format|
       if @users_has_recipe.save
-        format.html { redirect_to @users_has_recipe, notice: 'Recipe was successfully favorited.' }
-        format.json { render :show, status: :created, location: @users_has_recipe }
+        format.html { redirect_to users_has_ingredients_path, notice: 'Recipe was successfully favorited.' }
+        
       else
         format.html {redirect_to users_has_ingredients_path, notice: 'Recipe is already favorited!'  }
       end
