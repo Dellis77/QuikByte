@@ -120,12 +120,12 @@ function myFunction() {
 <%= yield %>
 
 <footer>
-<%="You have been logged in for #{time_ago_in_words(current_user.current_sign_in_at)}"%>
+<%="Time logged in: #{time_ago_in_words(current_user.current_sign_in_at)}"%>
 <br>
-<%="Last sign in was #{time_ago_in_words(current_user.last_sign_in_at)} ago"%>
+<%="Last sign in: #{time_ago_in_words(current_user.last_sign_in_at)} ago"%>
 <br>
 <% if (current_user.sign_in_count) > 50 %>
-<%="You're a regular! #{(current_user.sign_in_count)} QuikByte visits and counting..."%>
+<%="You're a regular! #{(current_user.sign_in_count)} QuikByte visits and counting!"%>
 <% else %>
 <%="You have visited QuikByte a total of #{(current_user.sign_in_count)} times"%>
 <% end %>

@@ -22,59 +22,45 @@
       <h3>Sign up, it's free!</h3>
     </div>
 
-    <div class="container">
+
 
  <div class="login2">
             
 
-            <%= form_for(resource, as: resource_name, :html=> {:class=>'large-12 medium-12 columns'}, url: registration_path(resource_name)) do |f| %>  
-            
+<%= form_for(resource, as: resource_name, :html=> {:class=>'large-12 medium-12 columns'}, url: registration_path(resource_name)) do |f| %>  
 
-                <div class="login-container2">
+<br>
 
+    <div class="field">
 
-                    <br>
-
-                    
-                        <div class="field">
-                          
-
-
-     <%= devise_error_messages! %>
+    <%= devise_error_messages! %>
     <%= f.label :"First Name" %><br/>
     <%= f.text_field :fname, autofocus: "true" %><br/>
     <%= f.label :"Last Name" %><br/>
     <%= f.text_field :lname %><br/>
   </div>
                   
-
-                    
-                      <%= f.label :email %>
-                      <%= f.email_field :email, autofocus: true %>
-                    
+    <%= f.label :email %>
+    <%= f.email_field :email, autofocus: true %>
                   
-                    <br/>
-                      <%= f.label :password %>
-                      <% if @minimum_password_length %>
-                      <em>(<%= @minimum_password_length %> characters minimum)</em>
-                      <% end %>
-                      <%= f.password_field :password, autocomplete: "off" %>
+<br/>
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+<% end %>
+    <%= f.password_field :password, autocomplete: "off" %>
+<br/>
+<%= f.label :"Confirm Password" %><br/>
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
                     
-                  <br/>
-                   
-                      <%= f.label :password_confirmation %>
-                      <%= f.password_field :password_confirmation, autocomplete: "off" %>
-                    
-                  
-                <br/>
-                <br/>
+ <br/>
+ <br/>
 
-                     
-                    <%= f.submit "Sign up", :class=>'button expanded' %>
+    <%= f.submit "Sign up", :class=>'button expanded' %>
                     
-                </div>
+</div>
 
-            <% end %>
+<% end %>
 
                 
       <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>

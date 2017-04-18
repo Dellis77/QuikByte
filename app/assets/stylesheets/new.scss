@@ -10,10 +10,11 @@ body {
 }
 
 .login {
-  width: 400px;
+  width: 35%;
   margin: 16px auto;
+    padding: 12px;
   font-size: 16px;
-  
+  background: #b1d1b1;
 }
 
 
@@ -67,9 +68,10 @@ body {
 }
 
 .login2 {
-  width: 400px;
-  
+  width: 50%;
+  background: #b1d1b1;
   margin: 16px auto;
+  padding: 12px;
   font-size: 16px;
   
 }
@@ -149,10 +151,7 @@ img.avatar {
     border-radius: 50%;
 }
 
-.container {
-    padding: 16px;
-    z-index: 2;
-}
+
 
 span.psw {
     float: right;
