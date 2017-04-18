@@ -315,3 +315,54 @@ p {
     text-align: center;
 }
 
+.welcome1 iframe{
+    width: 560px; 
+    height: 315px;
+}
+
+@media screen and (max-width: 415px) {
+    
+  .socialitem  {
+    display: block;
+    } 
+    
+    .fooditem  {
+
+    display: inline-block;
+    padding: 10px;
+    text-align: center;
+
+}
+
+    .logo{
+        height: 145px;
+    }
+    .con1 h1{
+   position: absolute;
+   text-align: center;
+   width: 100%;
+    top: 40%;
+    color: white;
+    z-index: 1;
+    font-size: 200%;
+    text-shadow: 50%;
+    }
+    
+.con1 h4{
+   
+   position: absolute;
+   text-align: center;
+   width: 100%;
+    top: 34%;
+    color: white;
+    z-index: 1;
+    font-size: 150%;
+    text-shadow: 50%;
+    }
+    
+    .welcome1 iframe{
+    width: 350px; 
+    height: 200px;
+}
+
+}
