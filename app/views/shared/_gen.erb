@@ -39,7 +39,7 @@
 <tbody>
       <tr>
        
-        <td><iframe width="350" height="200" src="<%= recipes_has_ingredient.recipe.videourl %>" frameborder="0" allowfullscreen>" frameborder="0" allowfullscreen></iframe></td>
+        <td><iframe width="300" height="200" src="<%= recipes_has_ingredient.recipe.videourl %>" frameborder="0" allowfullscreen>" frameborder="0" allowfullscreen></iframe></td>
        <tr>
         <td><%= button_to 'Favorite', {:controller => "users_has_recipes", :action => "create", :recipe_id => recipes_has_ingredient.recipe.id} , {:method => :post}  %></td>
         </tr>

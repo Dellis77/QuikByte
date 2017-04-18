@@ -36,19 +36,17 @@ z-index: 0;
 
 #content {
 	display: inline-block;					/* This causes the content to move to the left */
-	width: 40%;
+	width: 41%;
 	font-size: 8px;
     background-color: #cfedcf;                                 /* We need to set the width whenever we float an element */
   text-align: center;
-  padding: 8px;
+
   
 }
 
 #sidebar-left {
-    padding: 10px;
+    
 	float: left; 					
-						
-									
 	width: 260px; 					
   text-align: center;
 /*  box-shadow: -2px -2px 5px #888888;
@@ -60,7 +58,7 @@ z-index: 0;
 
 #sidebar-right {
 	float: right; 					/* This causes the sidebar to move to the right */
-	width: 360px;
+	width: 355px;
 	 text-align: center;
 	/* We need to set the width whenever we float an element */
 }
@@ -216,13 +214,14 @@ $(function () {
 
 <div id="content">
 <h2>Recipe Results</h2>
- 
 	 <%= render "shared/gen" %>
 </div>
 
 <div id="sidebar-right">
     <%= image_tag("Av/timeToCook.png", width: '250px') %>
-    <div class="ing-container2" >
+    
+<div class="ing-container2" >
+        
 <button class="accordion">My Favorite Recipes</button>
 <div class="panel">
     <%= render "shared/favs" %>
@@ -230,13 +229,11 @@ $(function () {
 
 <button class="accordion">Most Popular Recipes</button>
 <div class="panel">
- 
  <%= render "shared/top_five" %>
 </div>
 
 <button class="accordion">Quik Recipes</button>
 <div class="panel">
-    
     <%= render "shared/quik_recipe" %>
 </div>
 

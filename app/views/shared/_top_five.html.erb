@@ -1,7 +1,6 @@
 <div class="ingblock1">
 
 
-    <div class="centered">
     <% @top_five.each_with_index do |recipe, index| %>
 <table>
 
@@ -13,10 +12,9 @@
         <td><iframe width="300" height="200" src="<%= recipe.videourl %>" frameborder="0" allowfullscreen></iframe></td>
       </tr>
     <% end %>
-    </div>
   </tbody>
 </table>
-</div>
+
 </div>
 
 <br>
