@@ -101,6 +101,17 @@ div.panel {
     transition: max-height 0.2s ease-out;
 }
 
+@media screen and (max-width: 800px) {
+    #content {
+	display: inline-block;					/* This causes the content to move to the left */
+	width: 100%;
+	font-size: 8px;
+    background-color: #cfedcf;                                 /* We need to set the width whenever we float an element */
+    text-align: center;
+    }   
+    
+}
+
 @media screen and (max-width: 415px) {
  .container {
     position: static;
