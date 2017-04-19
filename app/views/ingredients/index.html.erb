@@ -36,51 +36,37 @@
 <hr/>
 </div>
 
-
-<table>
+    <% @ingredient.each do |ingredient| %>
+    <table>
 
     <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th></th>
-      <th></th>
-      <th>Options</th>
-      <th colspan="3"></th>
+      <th><%= ingredient.name %></th>
     </tr>
-  </thead>
 
-  <tbody>
-    <% @ingredient.each do |ingredient| %>
       <tr>
-        <td><%= ingredient.name %></td>
-        <td><%= ingredient.description %></td>
-     <td> 
-  <br/>
-  <%= image_tag(ingredient.image, :width => '80', :height =>'80' )  unless ingredient.image.blank? %>
-  
+        <td>Description: <%= ingredient.description %></td>
+        
+  <tr>
+     <th><%= image_tag(ingredient.image, :width => '80', :height =>'80' )  unless ingredient.image.blank? %></th> 
+  </tr>
 
 
-<% if ingredient.id == @Uing %>
-    <p>Added</p>
-<% else %>
-    <%= button_to 'Add', {:controller => "users_has_ingredients", :action => "create", :ingredient_id => ingredient.id} , {:method => :post}  %>
-<% end %>
-
-
-<br/>
-       <br/>
-     <br/>
-      </td>
-        <td><%= link_to 'Show', ingredient %></td>
+  <tr>
+    <td><%= button_to 'Add', {:controller => "users_has_ingredients", :action => "create", :ingredient_id => ingredient.id} , {:method => :post}  %></td>
+  </tr>
+      <tr>
+        <td><br></td>
       </tr>
-   
+      <tr>
+        <td><%= button_to 'Show', ingredient, {:method => :post} %></td>
+      </tr>
+   <br>
     <% end %>
-  </tbody>
+
 
 </table>
 <br>
 
-<%= link_to 'New Ingredient', new_ingredient_path %>
 <% end %>
 
 
