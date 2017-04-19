@@ -1,8 +1,18 @@
+<style>
+  .top td{
+    background: none;
+}
+  .top th{
+    background: none;
+}
+</style>
+
+
 <div class="ingblock1">
 
 
     <% @top_five.each_with_index do |recipe, index| %>
-<table>
+<table class="top">
 
   <tbody>
       <tr>
