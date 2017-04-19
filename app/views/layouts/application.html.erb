@@ -34,6 +34,9 @@ function myFunction() {
 <header>
 <br>
 <br>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
 
 <!--  <%= image_tag("logos/QuikByte Logo.png", width: '250px') %>
  </div> -->
@@ -68,11 +71,30 @@ function myFunction() {
   </li>
   
 </ul>
+  <div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="mySidebar">
+  <button onclick="w3_close()" class="w3-bar-item w3-large">Close &times;</button>
+  <a href="#" class="w3-bar-item w3-button"><%= link_to "My Fridge", root_path %></a>
+  <a href="#" class="w3-bar-item w3-button"><%= link_to "Ingredients", ingredients_path %></a>
+  <a href="#" class="w3-bar-item w3-button"><%= link_to "Recipes", recipes_path %></a>
+  <a href="#" class="w3-bar-item w3-button"><%= link_to "Shopping List", posts_path %></a>
+  <a href="#" class="w3-bar-item w3-button"><%= link_to "About", root_path %></a>
+</div>
 
+
+<!-- Page Content -->
+<div class="w3-black">
+  <button class="w3-button w3-teal w3-xlarge" onclick="w3_open()">☰</button>
+</div>
+
+<script>
+function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+}
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+}
+</script>
 <div class="who">
-  
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
 
 
   <div class="w3-dropdown-hover w3-right">
@@ -93,7 +115,6 @@ function myFunction() {
     
  
 </div>
-
 
 
 
@@ -192,7 +213,26 @@ function myFunction() {
   </li>
 
 </ul>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="mySidebar">
+  <button onclick="w3_close()" class="w3-bar-item w3-large">Close &times;</button>
+  <a href="#" class="w3-bar-item w3-button"><%= link_to "Home", root_path %></a>
+  <a href="#" class="w3-bar-item w3-button"><%= link_to "About", root_path %></a>
+</div>
 
+<!-- Page Content -->
+<div class="w3-black">
+  <button class="w3-button w3-teal w3-xlarge" onclick="w3_open()">☰</button>
+</div>
+
+<script>
+function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+}
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+}
+</script>
   </div>
 
   </div>

@@ -78,7 +78,7 @@ head {
     background-image: url("logos/QuikByte Logo.png");
     background-position: absolute;
     background-repeat: no-repeat;
-    background-size: 14% auto;
+    background-size: 15% auto;
     height: 100px;
     z-index: 0;
     box-shadow: 2px 2px 5px #888888;
@@ -252,6 +252,7 @@ footer {
 footer .social td{
 
     padding: 8px;
+    background: none;
 }
 
 
@@ -309,6 +310,7 @@ table .tab1 {
     border: none;
     text-align: center;
     padding: 8px;
+    background: none;
 }
 
 p {
@@ -319,6 +321,12 @@ p {
     width: 560px; 
     height: 315px;
 }
+
+.w3-black {
+    display: none;
+}
+
+
 
 @media screen and (max-width: 415px) {
     
@@ -336,6 +344,7 @@ p {
 
     .logo{
         height: 145px;
+        background-size: 39% auto;
     }
     .con1 h1{
    position: absolute;
@@ -363,6 +372,14 @@ p {
     .welcome1 iframe{
     width: 350px; 
     height: 200px;
+    }
+    
+    .menuitem {
+        display: none;
+    }
+    
+    .w3-black {
+    display: inline;
 }
 
 }
