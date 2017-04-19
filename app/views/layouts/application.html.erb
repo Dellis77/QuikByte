@@ -73,11 +73,11 @@ function myFunction() {
 </ul>
   <div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="mySidebar">
   <button onclick="w3_close()" class="w3-bar-item w3-large">Close &times;</button>
-  <a href="#" class="w3-bar-item w3-button"><%= link_to "My Fridge", root_path %></a>
-  <a href="#" class="w3-bar-item w3-button"><%= link_to "Ingredients", ingredients_path %></a>
-  <a href="#" class="w3-bar-item w3-button"><%= link_to "Recipes", recipes_path %></a>
-  <a href="#" class="w3-bar-item w3-button"><%= link_to "Shopping List", posts_path %></a>
-  <a href="#" class="w3-bar-item w3-button"><%= link_to "About", root_path %></a>
+  <a href="#" ><%= button_to "My Fridge", root_path, {:method => :get} %></a>
+  <a href="#" ><%= button_to "Ingredients", ingredients_path, {:method => :get} %></a>
+  <a href="#" ><%= button_to "Recipes", recipes_path, {:method => :get} %></a>
+  <a href="#" ><%= button_to "Shopping List", posts_path, {:method => :get} %></a>
+  <a href="#" ><%= button_to "About", root_path, {:method => :get} %></a>
 </div>
 
 
@@ -216,8 +216,8 @@ function w3_close() {
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="mySidebar">
   <button onclick="w3_close()" class="w3-bar-item w3-large">Close &times;</button>
-  <a href="#" class="w3-bar-item w3-button"><%= link_to "Home", root_path %></a>
-  <a href="#" class="w3-bar-item w3-button"><%= link_to "About", root_path %></a>
+  <a href="#" ><%= button_to "Home", root_path, {:method => :get} %></a>
+  <a href="#" ><%= button_to "About", root_path, {:method => :get} %></a>
 </div>
 
 <!-- Page Content -->
