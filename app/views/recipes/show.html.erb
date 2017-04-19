@@ -1,3 +1,5 @@
+<div class="resblock">
+
 <h2>
   <strong>Name:</strong>
   <%= @recipe.name %>
@@ -41,5 +43,8 @@
   <%= @recipe.cooktime %>
 </p>
 
-<%= link_to 'Edit', edit_recipe_path(@recipe) %> |
-<%= link_to 'Back', recipes_path %>
+<%= button_to 'Edit', edit_recipe_path(@recipe), {:method => :get} %>
+<br>
+<%= button_to 'Back', recipes_path, {:method => :get} %>
+
+</div>

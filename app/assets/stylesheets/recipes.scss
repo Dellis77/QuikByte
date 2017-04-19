@@ -1,3 +1,34 @@
 // Place all the styles related to the Recipes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.resblock {
+  width: 700px;
+  height: 1000px;
+  overflow: auto;
+  margin: 16px auto;
+  font-size: 15px;
+  background: #b1d1b1;
+  padding: 12px;
+  box-shadow:  0px -2px 10px #888888;
+}
+
+.resblock td{
+    padding: 8px;
+    border: 1px solid#5a5b5a;
+
+}
+
+
+.resblock th{
+    padding: 8px;
+    border: 1px solid#5a5b5a;
+
+}
+
+.resblock button{
+    width: 80%;
+}
+
+.tabs td{
+    border: none;
+}
