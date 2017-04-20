@@ -10,7 +10,7 @@
 </div>
 <br>
 <% if user_signed_in? %>
-<%= button_to "Edit Post", edit_post_path(@post),{:method => :get} %>
+<%= button_to "Edit List", edit_post_path(@post),{:method => :get} %>
 <br>
 <%= button_to "Delete", post_path(@post), method: :delete, data: { confirm: "Are You Sure?" } %>
 <br>

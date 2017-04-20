@@ -141,11 +141,9 @@ function w3_close() {
 <%= yield %>
 
 <footer>
-<%="Time logged in: #{time_ago_in_words(current_user.current_sign_in_at)}"%>
+<%="You've been logged in for #{time_ago_in_words(current_user.current_sign_in_at)} and you last signed in #{time_ago_in_words(current_user.last_sign_in_at)} ago"%>
 <br>
-<%="Last sign in: #{time_ago_in_words(current_user.last_sign_in_at)} ago"%>
-<br>
-<% if (current_user.sign_in_count) > 50 %>
+<% if (current_user.sign_in_count) > 10 %>
 <%="You're a regular! #{(current_user.sign_in_count)} QuikByte visits and counting!"%>
 <% else %>
 <%="You have visited QuikByte a total of #{(current_user.sign_in_count)} times"%>
