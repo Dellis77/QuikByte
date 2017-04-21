@@ -67,7 +67,7 @@ function myFunction() {
   <li class="menuitem"><%= link_to "Shopping List", posts_path %>
   </li>
 
-  <li class="menuitem"><%= link_to "About", root_path %>
+  <li class="menuitem"><%= link_to "About", about_quikbyte_path %>
   </li>
   
 </ul>
@@ -77,7 +77,7 @@ function myFunction() {
   <a href="#" ><%= button_to "Ingredients", ingredients_path, {:method => :get} %></a>
   <a href="#" ><%= button_to "Recipes", recipes_path, {:method => :get} %></a>
   <a href="#" ><%= button_to "Shopping List", posts_path, {:method => :get} %></a>
-  <a href="#" ><%= button_to "About", root_path, {:method => :get} %></a>
+  <a href="#" ><%= button_to "About", about_quikbyte_path, {:method => :get} %></a>
 </div>
 
 
@@ -183,7 +183,9 @@ function w3_close() {
 </head>
 
 <body>
+
 <div class="con1">
+
     <h4>TAKE THE GUESSING OUT OF COOKING,</h4>
    <h1>LET US FIX YOU A BYTE TO EAT.</h1>
    
@@ -194,47 +196,14 @@ function w3_close() {
 <div class="banner">
 
 
-<header>
+
 <div class="wrapper">
+  <div class="white">
+<%= image_tag("logos/QuikByte Logo.png") %>
 
-<!--  <%= image_tag("logos/QuikByte Logo.png", width: '250px') %>
- </div> -->
-
-<div class="logo">
-
-<ul class="topmenu">
-<br>
-
-  <li class="menuitem"><%= link_to "Home", root_path %>
-  </li>
-<li class="menuitem"><%= link_to "About", root_path %>
-  </li>
-
-</ul>
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="mySidebar">
-  <button onclick="w3_close()" class="w3-bar-item w3-large">Close &times;</button>
-  <a href="#" ><%= button_to "Home", root_path, {:method => :get} %></a>
-  <a href="#" ><%= button_to "About", root_path, {:method => :get} %></a>
 </div>
 
-<!-- Page Content -->
-<div class="w3-black">
-  <button class="w3-button w3-teal w3-xlarge" onclick="w3_open()">☰</button>
-</div>
 
-<script>
-function w3_open() {
-    document.getElementById("mySidebar").style.display = "block";
-}
-function w3_close() {
-    document.getElementById("mySidebar").style.display = "none";
-}
-</script>
-  </div>
-
-  </div>
-</header>
 
 </div>
 
