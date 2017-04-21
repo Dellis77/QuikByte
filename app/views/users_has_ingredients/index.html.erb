@@ -176,7 +176,13 @@ $(function () {
 </head>
 <body>
 
-<h1><%= greeting %> <%= current_user.fname %>, you're our favorite customer!</h1> 
+
+
+<h1><%= greeting %> <%= current_user.fname %>, you're our favorite customer!</h1>
+
+<% if current_user.sign_in_count == 0 %>
+<% flash[:notice] = "Post successfully created" %>
+<% end %>
 
 <div class="container">
 		
