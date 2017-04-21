@@ -1,8 +1,25 @@
+
 .qb {
     margin: auto;
-    width: 80%;
+    width: 85%;
+    height: 100%;
+    background: #d9e3e3;
+    padding: 8px;
+    
+}
+
+@media screen and (max-width: 700px) {
+  .qb {
+    margin: auto;
+    width: 100%;
     height: 50%;
     background: #d9e3e3;
     padding: 8px;
+    
+} 
+
+.qb img{
+    width: 100%;
+}
     
 }
