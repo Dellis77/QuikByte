@@ -1,4 +1,5 @@
 class RecipesController < ApplicationController
+  protect_from_forgery prepend: true
   before_action :set_recipe, only: [:show, :edit, :update, :destroy]
 
   # GET /recipes
