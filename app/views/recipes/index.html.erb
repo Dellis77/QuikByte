@@ -35,7 +35,7 @@
 </div>
 
 
-    <% @recipe.each do |recipe| %>
+    <% @recipe.order(:name).each do |recipe| %>
     
     <table>
     <tr>
