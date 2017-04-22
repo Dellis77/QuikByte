@@ -36,7 +36,7 @@
 <hr/>
 </div>
 
-    <% @ingredient.each do |ingredient| %>
+    <% @ingredient.order(:name).each do |ingredient| %>
     <table class="serIng">
 
     <tr>

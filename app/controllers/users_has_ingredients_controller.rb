@@ -15,7 +15,7 @@ class UsersHasIngredientsController < ApplicationController
     @top_five = Recipe.joins(:users_has_recipes).group("recipe_id").order("count(recipe_id) DESC LIMIT 5")
     @favorite_video = UsersHasRecipe.joins(:recipe, :user).where(:user_id => current_user.id).order("name")
     @quik_recipes = Recipe.select("(preptime + cooktime) as totaltime, name, videourl").order("totaltime LIMIT 5")
-User.order('name DESC')
+    User.order('name DESC')
   end
 
   # GET /users_has_ingredients/1
